@@ -79,11 +79,6 @@
 
   function renderHome() {
     app.innerHTML = `
-      <section class="hero">
-        <h2>Find the shape.<br>Hear the movement.</h2>
-        <p>A clear, practical reference for guitar voicings and chord progressions.</p>
-      </section>
-
       <section class="home-grid">
         <button class="nav-card" data-go="forms" type="button">
           <span class="card-kicker">FORMS</span>

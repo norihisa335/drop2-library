@@ -27,11 +27,35 @@
     return strings;
   }
 
+  function shiftToLowestEquivalent(frets, fretCount = 5) {
+    let normalized = frets.map((fret) => {
+      if (fret === null || fret === undefined || String(fret).toLowerCase() === "x") {
+        return fret;
+      }
+      const numeric = Number(fret);
+      return Number.isFinite(numeric) ? numeric : fret;
+    });
+
+    // A guitar shape repeats every 12 frets. Use the displayed window as the
+    // reference, not the lowest individual note, and keep moving the complete
+    // shape down until the first displayed fret is 12 or lower.
+    let window = chooseWindow(normalized, fretCount);
+    while (window.startFret > 12) {
+      normalized = normalized.map((fret) =>
+        Number.isFinite(fret) && fret > 0 ? fret - 12 : fret
+      );
+      window = chooseWindow(normalized, fretCount);
+    }
+
+    return normalized;
+  }
+
   function normalizeVoicing(voicing) {
     const strings = Array.isArray(voicing.strings)
       ? voicing.strings.map(Number)
       : parseStringSet(voicing.stringSet);
-    const frets = Array.isArray(voicing.frets) ? voicing.frets : [];
+    const rawFrets = Array.isArray(voicing.frets) ? voicing.frets : [];
+    const frets = shiftToLowestEquivalent(rawFrets);
     const degrees = Array.isArray(voicing.degrees) ? voicing.degrees : [];
 
     if (strings.length !== frets.length) {
@@ -267,7 +291,7 @@
         : { width: 180, height: 250, left: 28, right: 18, top: 24, bottom: 18 })
       : (size === "large"
         ? { width: 520, height: 250, left: 46, right: 18, top: 35, bottom: 28 }
-        : { width: 260, height: 132, left: 28, right: 12, top: 24, bottom: 18 });
+        : { width: 246, height: 120, left: 27, right: 11, top: 22, bottom: 16 });
 
     const { width, height, left, right, top, bottom } = dimensions;
     const boardWidth = width - left - right;
@@ -319,6 +343,7 @@
   window.GuitarFretboard = {
     render: renderFretboard,
     chooseWindow,
-    parseStringSet
+    parseStringSet,
+    shiftToLowestEquivalent
   };
 })();
