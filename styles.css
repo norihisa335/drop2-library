@@ -73,17 +73,39 @@ button { color: inherit; }
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: 44px 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
+  gap: 10px 12px;
   min-height: 92px;
   padding: max(14px, env(safe-area-inset-top)) 18px 12px;
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   border-bottom: 1px solid var(--separator);
+  overflow: visible;
 }
 
-.header-title-wrap { min-width: 0; }
+#backButton {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.header-title-wrap {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.header-actions {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
 
 .eyebrow {
   margin: 0 0 2px;
@@ -112,6 +134,19 @@ h1 {
   cursor: pointer;
 }
 
+.print-button {
+  border: 1px solid var(--separator);
+  border-radius: 999px;
+  background: var(--surface-solid);
+  color: var(--text);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .hidden { visibility: hidden !important; pointer-events: none !important; }
 
 .degree-control {
@@ -122,6 +157,8 @@ h1 {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .degree-control input {
@@ -491,10 +528,248 @@ select {
   .pattern-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
+@media (min-width: 700px) {
+  .home-grid { grid-template-columns: 1fr 1fr; }
+  .control-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .pattern-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .app-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+  .header-title-wrap {
+    grid-column: 2;
+  }
+  .header-actions {
+    grid-column: 3;
+    grid-row: 1;
+    width: auto;
+    justify-content: flex-end;
+  }
+}
+
 @media (max-width: 420px) {
-  .degree-control > span:first-child { display: none; }
-  .app-header { grid-template-columns: 38px 1fr auto; }
+  .app-header { padding-left: 12px; padding-right: 12px; }
   .app-main { padding-left: 12px; padding-right: 12px; }
 }
 
 .empty-state.compact { padding: 22px 8px; font-size: 12px; }
+
+.print-header {
+  display: none;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-solid: #ffffff;
+    --text: #000000;
+    --secondary: #333333;
+    --tertiary: #555555;
+    --separator: #c7c7c7;
+    --accent: #000000;
+    --accent-soft: #f2f2f2;
+    --root-note: #000000;
+    --note: #000000;
+    --board: #ffffff;
+    --string: #555555;
+    --fret: #555555;
+    --marker: #d9d9d9;
+    --shadow: none;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .app-shell {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .nav-card,
+  .panel,
+  .control-group,
+  .section-heading,
+  .form-table-wrap,
+  .selected-card,
+  .pattern-group,
+  .voicing-card,
+  .empty-state,
+  .fretboard-host,
+  .fretboard-svg,
+  .control-grid,
+  .segmented,
+  select,
+  button,
+  .degree-control,
+  .icon-button,
+  .print-button,
+  .header-actions {
+    box-shadow: none !important;
+    background: transparent !important;
+    border-color: #c7c7c7 !important;
+    color: #000000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .app-main {
+    padding: 0;
+  }
+
+  .home-grid,
+  .panel,
+  .section-heading,
+  .form-table-wrap,
+  .selected-card,
+  .pattern-group,
+  .voicing-card,
+  .empty-state {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin: 0 0 16px;
+    padding: 8px 10px;
+    border: 1px solid #c7c7c7;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .selected-form-heading,
+  .selected-card,
+  .use-case {
+    display: none !important;
+  }
+
+  .print-header-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .common-controls,
+  .controls,
+  .degree-control,
+  .hidden,
+  .icon-button,
+  .print-button,
+  .back-button,
+  [data-go],
+  .switch,
+  .switch::after {
+    display: none !important;
+  }
+
+  .panel {
+    display: none !important;
+  }
+
+  .form-table-wrap {
+    overflow: visible;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+  }
+
+  .form-table {
+    grid-template-columns: 84px repeat(4, minmax(118px, 1fr));
+    min-width: 0;
+  }
+
+  .table-cell {
+    min-height: 74px;
+    border-right: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+    font-size: 11px;
+  }
+
+  .selected-card {
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 12px;
+  }
+
+  .pattern-list {
+    display: block;
+  }
+
+  .pattern-group {
+    width: 100%;
+    margin: 0 0 8px;
+    padding: 0;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .pattern-heading {
+    padding: 6px 8px;
+    border-bottom: 1px solid #c7c7c7;
+  }
+
+  .pattern-heading h3 {
+    font-size: 13px;
+  }
+
+  .pattern-heading p {
+    font-size: 10px;
+    color: #222222;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .pattern-grid {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    background: #ffffff;
+  }
+
+  .voicing-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #c7c7c7;
+    padding: 5px;
+  }
+
+  .voicing-card h4 {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .voicing-card p {
+    font-size: 9px;
+    margin-bottom: 3px;
+  }
+
+  .fretboard-host {
+    margin-top: 4px;
+  }
+
+  .fretboard-svg {
+    max-width: 100%;
+  }
+
+  .empty-state {
+    border: 1px solid #c7c7c7;
+    padding: 12px;
+  }
+}

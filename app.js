@@ -25,6 +25,24 @@
   const backButton = document.querySelector("#backButton");
   const degreeControl = document.querySelector("#degreeControl");
   const degreeToggle = document.querySelector("#degreeToggle");
+  const header = document.querySelector(".app-header");
+  const printButton = document.createElement("button");
+  const printStyle = document.createElement("style");
+
+  printStyle.id = "dynamicPrintPageStyle";
+  document.head.appendChild(printStyle);
+
+  printButton.id = "printButton";
+  printButton.className = "print-button";
+  printButton.type = "button";
+  printButton.textContent = "Print";
+  printButton.setAttribute("aria-label", "Print current view");
+
+  const headerActions = document.createElement("div");
+  headerActions.className = "header-actions";
+  degreeControl.remove();
+  headerActions.append(degreeControl, printButton);
+  header.appendChild(headerActions);
 
   degreeToggle.checked = state.showDegrees;
 
@@ -65,6 +83,12 @@
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
+  function updatePrintStyle() {
+    printStyle.textContent = state.page === "forms"
+      ? "@page { size: A4 landscape; margin: 8mm; }"
+      : "@page { size: A4 portrait; margin: 7mm; }";
+  }
+
   function renderHeader() {
     const isHome = state.page === "home";
     pageTitle.textContent = isHome
@@ -75,6 +99,25 @@
 
     backButton.classList.toggle("hidden", isHome);
     degreeControl.classList.toggle("hidden", isHome);
+    printButton.classList.toggle("hidden", isHome);
+  }
+
+  function printHeaderMarkup() {
+    const activeRoots = state.chords
+      .filter((chord) => chord.root)
+      .map((chord) => chord.root);
+
+    const rootValue = state.page === "forms"
+      ? state.root
+      : activeRoots.join(" → ");
+
+    return `
+      <div class="print-header" aria-hidden="true">
+        <div class="print-header-item">Drop2 ${escapeHtml(state.library)}</div>
+        <div class="print-header-item">Root: ${escapeHtml(rootValue)}</div>
+        <div class="print-header-item">String Set: ${escapeHtml(state.stringSet)}</div>
+      </div>
+    `;
   }
 
   function renderHome() {
@@ -172,6 +215,7 @@
     });
 
     app.innerHTML = `
+      ${printHeaderMarkup()}
       ${commonControls()}
 
       <div class="section-heading">
@@ -183,7 +227,7 @@
         <div class="form-table">${table.join("")}</div>
       </section>
 
-      <div class="section-heading">
+      <div class="section-heading selected-form-heading">
         <h2>Selected Form</h2>
         <p>${selected ? escapeHtml(selected.id) : ""}</p>
       </div>
@@ -263,6 +307,7 @@
       .filter((chord) => chord.root);
 
     app.innerHTML = `
+      ${printHeaderMarkup()}
       ${commonControls({ includeRoot: false })}
 
       <section class="panel voicing-chords">
@@ -344,6 +389,13 @@
   }
 
   function bindEvents() {
+    printButton.onclick = () => {
+      updatePrintStyle();
+      requestAnimationFrame(() => {
+        window.setTimeout(() => window.print(), 80);
+      });
+    };
+
     document.querySelectorAll("[data-go]").forEach((button) => {
       button.addEventListener("click", () => setPage(button.dataset.go));
     });
@@ -388,6 +440,7 @@
   }
 
   function render() {
+    updatePrintStyle();
     renderHeader();
 
     if (state.page === "home") renderHome();
