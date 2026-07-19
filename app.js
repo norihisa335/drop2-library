@@ -11,7 +11,7 @@
     root: "C",
     orientation: "horizontal",
     showDegrees: localStorage.getItem("gvl-show-degrees") !== "false",
-    selectedFormId: "M7-25-R-01",
+    selectedFormId: "M7-25-R-S-01",
     chords: [
       { root: "C", quality: "Maj7" },
       { root: "A", quality: "m7" },
@@ -38,15 +38,31 @@
   }
 
   function options(items, selected) {
-    return items.map((item) =>
-      `<option value="${escapeHtml(item)}"${item === selected ? " selected" : ""}>${escapeHtml(item)}</option>`
-    ).join("");
+    return items
+      .map((item) => `<option value="${escapeHtml(item)}"${item === selected ? " selected" : ""}>${escapeHtml(item)}</option>`)
+      .join("");
+  }
+
+  function displayQuality(quality) {
+    return quality === "m7b5" ? "m7b5" : quality;
+  }
+
+  function transposeForm(form, root) {
+    const offset = DATA.rootOffsets[root] ?? 0;
+    return {
+      ...form,
+      frets: form.frets.map((fret) => {
+        if (fret === null || fret === undefined || String(fret).toLowerCase() === "x") return fret;
+        const number = Number(fret);
+        return number > 0 ? number + offset : number;
+      })
+    };
   }
 
   function setPage(page) {
     state.page = page;
     render();
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   function renderHeader() {
@@ -71,14 +87,14 @@
       <section class="home-grid">
         <button class="nav-card" data-go="forms" type="button">
           <span class="card-kicker">FORMS</span>
-          <span class="arrow">›</span>
+          <span class="arrow" aria-hidden="true">&rsaquo;</span>
           <h2>Form Library</h2>
           <p>Browse voicing forms</p>
         </button>
 
         <button class="nav-card" data-go="voicings" type="button">
           <span class="card-kicker">PROGRESSIONS</span>
-          <span class="arrow">›</span>
+          <span class="arrow" aria-hidden="true">&rsaquo;</span>
           <h2>Voicing Library</h2>
           <p>Explore chord progressions</p>
         </button>
@@ -120,35 +136,41 @@
   }
 
   function currentForms() {
-    const exact = DATA.forms.filter((form) =>
+    return DATA.forms.filter((form) =>
       form.library === state.library && form.stringSet === state.stringSet
     );
-
-    // Demo fallback while Practical and 1–4 data are still being entered.
-    return exact.length ? exact : DATA.forms.filter((form) => form.stringSet === "2-5");
   }
 
   function renderFormLibrary() {
     const forms = currentForms();
     const byKey = new Map(forms.map((form) => [`${form.quality}|${form.inversion}`, form]));
-    let selected = forms.find((form) => form.id === state.selectedFormId) ?? forms[0];
+    let selected = forms.find((form) => form.id === state.selectedFormId);
 
+    if (!selected) selected = forms[0] ?? null;
     if (selected) state.selectedFormId = selected.id;
 
     const table = [
-      `<div class="table-cell header"></div>`,
-      ...DATA.inversions.map((inv) => `<div class="table-cell header">${escapeHtml(inv)}</div>`)
+      `<div class="table-cell header">Quality</div>`,
+      ...DATA.inversions.map((inversion) => `<div class="table-cell header">${escapeHtml(inversion)}</div>`)
     ];
 
     DATA.qualities.forEach((quality) => {
-      table.push(`<div class="table-cell row-label">${escapeHtml(quality)}</div>`);
+      table.push(`<div class="table-cell row-label">${escapeHtml(displayQuality(quality))}</div>`);
+
       DATA.inversions.forEach((inversion) => {
         const form = byKey.get(`${quality}|${inversion}`);
+
         table.push(`
           <div class="table-cell">
             ${form
-              ? `<button class="form-button ${form.id === state.selectedFormId ? "selected" : ""}" data-form-id="${escapeHtml(form.id)}" type="button">${escapeHtml(inversion)}</button>`
-              : `<span aria-hidden="true">—</span>`}
+              ? `<button
+                   class="form-button ${form.id === state.selectedFormId ? "selected" : ""}"
+                   data-form-id="${escapeHtml(form.id)}"
+                   type="button"
+                   aria-label="${escapeHtml(`${displayQuality(quality)} ${inversion}`)}">
+                   <span class="mini-fretboard" data-mini-form="${escapeHtml(form.id)}"></span>
+                 </button>`
+              : `<span class="missing-form">-</span>`}
           </div>
         `);
       });
@@ -159,7 +181,7 @@
 
       <div class="section-heading">
         <h2>Forms</h2>
-        <p>${escapeHtml(state.stringSet)} strings</p>
+        <p>${escapeHtml(state.stringSet)}</p>
       </div>
 
       <section class="form-table-wrap">
@@ -175,8 +197,8 @@
         <section class="selected-card">
           <div class="selected-meta">
             <div>
-              <h3>${escapeHtml(state.root)}${escapeHtml(selected.quality)}</h3>
-              <p>${escapeHtml(selected.inversion)} · ${escapeHtml(selected.category)}</p>
+              <h3>${escapeHtml(state.root)}${escapeHtml(displayQuality(selected.quality))}</h3>
+              <p>${escapeHtml(selected.inversion)} (Drop2)</p>
             </div>
             <p>${escapeHtml(selected.stringSet)}</p>
           </div>
@@ -191,8 +213,19 @@
       ` : `<div class="empty-state">No matching forms yet.</div>`}
     `;
 
+    document.querySelectorAll("[data-mini-form]").forEach((host) => {
+      const form = forms.find((item) => item.id === host.dataset.miniForm);
+      if (!form) return;
+
+      Fretboard.render(host, transposeForm(form, state.root), {
+        size: "small",
+        orientation: state.orientation,
+        showDegrees: false
+      });
+    });
+
     if (selected) {
-      Fretboard.render("#selectedFretboard", selected, {
+      Fretboard.render("#selectedFretboard", transposeForm(selected, state.root), {
         size: "large",
         orientation: state.orientation,
         showDegrees: state.showDegrees
@@ -204,12 +237,14 @@
     return state.chords.map((chord, index) => `
       <div class="chord-row">
         <div class="chord-number">Chord ${index + 1}</div>
+
         <div class="control-group">
           <label for="chordRoot${index}">Root</label>
           <select id="chordRoot${index}" data-chord-index="${index}" data-chord-field="root">
             ${options(DATA.roots, chord.root)}
           </select>
         </div>
+
         <div class="control-group">
           <label for="chordQuality${index}">Quality</label>
           <select id="chordQuality${index}" data-chord-index="${index}" data-chord-field="quality">
@@ -232,7 +267,7 @@
 
       <div class="section-heading">
         <h2>Voicings</h2>
-        <p>4 chords × 4 inversions</p>
+        <p>4 chords x 4 inversions</p>
       </div>
 
       <section id="voicingGrid" class="voicing-grid"></section>
@@ -251,7 +286,7 @@
 
         if (!form) {
           card.innerHTML = `
-            <h3>${escapeHtml(chord.root)}${escapeHtml(chord.quality)}</h3>
+            <h3>${escapeHtml(chord.root)}${escapeHtml(displayQuality(chord.quality))}</h3>
             <p>${escapeHtml(inversion)}</p>
             <div class="empty-state">No form</div>
           `;
@@ -260,16 +295,18 @@
         }
 
         const title = document.createElement("h3");
-        title.textContent = `${chord.root}${chord.quality}`;
+        title.textContent = `${chord.root}${displayQuality(chord.quality)}`;
+
         const meta = document.createElement("p");
-        meta.textContent = `${inversion} · Chord ${chordIndex + 1}`;
+        meta.textContent = `${inversion} - Chord ${chordIndex + 1}`;
+
         const host = document.createElement("div");
         host.className = "fretboard-host";
 
         card.append(title, meta, host);
         grid.appendChild(card);
 
-        Fretboard.render(host, form, {
+        Fretboard.render(host, transposeForm(form, chord.root), {
           size: "small",
           orientation: state.orientation,
           showDegrees: state.showDegrees
@@ -295,8 +332,7 @@
 
     document.querySelector("#rootSelect")?.addEventListener("change", (event) => {
       state.root = event.target.value;
-      renderFormLibrary();
-      bindEvents();
+      render();
     });
 
     document.querySelectorAll("[data-segment='orientation'] button").forEach((button) => {
@@ -309,8 +345,7 @@
     document.querySelectorAll("[data-form-id]").forEach((button) => {
       button.addEventListener("click", () => {
         state.selectedFormId = button.dataset.formId;
-        renderFormLibrary();
-        bindEvents();
+        render();
       });
     });
 
@@ -318,8 +353,7 @@
       select.addEventListener("change", () => {
         const index = Number(select.dataset.chordIndex);
         state.chords[index][select.dataset.chordField] = select.value;
-        renderVoicingLibrary();
-        bindEvents();
+        render();
       });
     });
   }
