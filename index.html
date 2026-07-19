@@ -1,92 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f5f5f7">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Guitar Voicing Library</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="app-shell">
     <header class="app-header">
-      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-      <h1>Guitar Voicing Library</h1>
+      <button id="backButton" class="icon-button hidden" type="button" aria-label="Back">
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div class="header-title-wrap">
+        <p class="eyebrow">Guitar Voicing Library</p>
+        <h1 id="pageTitle">Home</h1>
+      </div>
+
+      <label id="degreeControl" class="degree-control hidden">
+        <span>Degrees</span>
+        <input id="degreeToggle" type="checkbox" checked />
+        <span class="switch" aria-hidden="true"></span>
+      </label>
     </header>
 
-    <main>
-      <section class="page is-active" data-page="home">
-        <button class="library-card" data-open-page="form">
-          <span class="card-icon">▦</span>
-          <span class="card-copy"><strong>Form Library</strong><small>Browse voicing forms</small></span>
-          <span class="chevron">›</span>
-        </button>
-
-        <button class="library-card" data-open-page="voicing">
-          <span class="card-icon">♪</span>
-          <span class="card-copy"><strong>Voicing Library</strong><small>Explore chord progressions</small></span>
-          <span class="chevron">›</span>
-        </button>
-      </section>
-
-      <section class="page" data-page="form">
-        <button class="back-button" data-back>‹ Home</button>
-        <h2>Form Library</h2>
-
-        <div class="segmented-control"><button class="is-selected">Standard</button><button>Practical</button></div>
-
-        <div class="settings-card">
-          <label class="setting-row"><span>String Set</span><select><option>2–5</option><option>1–4</option><option>3–6</option></select></label>
-          <label class="setting-row"><span>Root</span><select>
-            <option>C</option><option>C#/Db</option><option>D</option><option>D#/Eb</option>
-            <option>E</option><option>F</option><option>F#/Gb</option><option>G</option>
-            <option>G#/Ab</option><option>A</option><option>A#/Bb</option><option>B</option>
-          </select></label>
-        </div>
-
-        <span class="control-label">View</span>
-        <div class="segmented-control"><button class="is-selected">Horizontal</button><button>Vertical</button></div>
-
-        <div class="diagram-table-wrap">
-          <table>
-            <thead><tr><th></th><th>Root</th><th>1st</th><th>2nd</th><th>3rd</th></tr></thead>
-            <tbody>
-              <tr><th>Maj7</th><td>Diagram</td><td>Diagram</td><td>Diagram</td><td>Diagram</td></tr>
-              <tr><th>7</th><td>Diagram</td><td>Diagram</td><td>Diagram</td><td>Diagram</td></tr>
-              <tr><th>m7</th><td>Diagram</td><td>Diagram</td><td>Diagram</td><td>Diagram</td></tr>
-              <tr><th>m7♭5</th><td>Diagram</td><td>Diagram</td><td>Diagram</td><td>Diagram</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <section class="detail-card">
-          <span class="eyebrow">Selected Form</span>
-          <div class="diagram-placeholder">Diagram</div>
-          <h3>Use Case</h3>
-          <p>Select a form above to view its details.</p>
-        </section>
-      </section>
-
-      <section class="page" data-page="voicing">
-        <button class="back-button" data-back>‹ Home</button>
-        <h2>Voicing Library</h2>
-
-        <div class="segmented-control"><button class="is-selected">Standard</button><button>Practical</button></div>
-
-        <div class="chord-grid" id="chordGrid"></div>
-
-        <div class="settings-card">
-          <label class="setting-row"><span>String Set</span><select><option>2–5</option><option>1–4</option><option>3–6</option></select></label>
-        </div>
-
-        <span class="control-label">View</span>
-        <div class="segmented-control"><button class="is-selected">Horizontal</button><button>Vertical</button></div>
-
-        <div class="voicing-matrix" id="voicingMatrix"></div>
-      </section>
-    </main>
+    <main id="app" class="app-main" aria-live="polite"></main>
   </div>
 
-  <script src="app.js"></script>
+  <script src="./data.js"></script>
+  <script src="./fretboard.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

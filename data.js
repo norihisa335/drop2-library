@@ -1,1 +1,191 @@
-window.DROP2_DATA = {"standard":[{"ID":"M7-25-R-S-01","Style":"Standard","Quality":"Maj7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":4,"S2":5,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"7","D2":"3","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-25-1-S-01","Style":"Standard","Quality":"Maj7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":7,"S4":9,"S3":5,"S2":8,"S1":null,"D6":null,"D5":"3","D4":"7","D3":"R","D2":"5","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-25-2-S-01","Style":"Standard","Quality":"Maj7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":10,"S3":9,"S2":12,"S1":null,"D6":null,"D5":"5","D4":"R","D3":"3","D2":"7","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-25-3-S-01","Style":"Standard","Quality":"Maj7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":14,"S4":14,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"7","D4":"3","D3":"5","D2":"R","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-25-R-S-01","Style":"Standard","Quality":"7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":3,"S2":5,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"b7","D2":"3","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-25-1-S-01","Style":"Standard","Quality":"7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":7,"S4":8,"S3":5,"S2":8,"S1":null,"D6":null,"D5":"3","D4":"b7","D3":"R","D2":"5","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-25-2-S-01","Style":"Standard","Quality":"7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":10,"S3":9,"S2":11,"S1":null,"D6":null,"D5":"5","D4":"R","D3":"3","D2":"b7","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-25-3-S-01","Style":"Standard","Quality":"7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":14,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"3","D3":"5","D2":"R","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-25-R-S-01","Style":"Standard","Quality":"m7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":3,"S2":4,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"b7","D2":"b3","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-25-1-S-01","Style":"Standard","Quality":"m7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":6,"S4":8,"S3":5,"S2":8,"S1":null,"D6":null,"D5":"b3","D4":"b7","D3":"R","D2":"5","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-25-2-S-01","Style":"Standard","Quality":"m7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":10,"S3":8,"S2":11,"S1":null,"D6":null,"D5":"5","D4":"R","D3":"b3","D2":"b7","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-25-3-S-01","Style":"Standard","Quality":"m7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":13,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"b3","D3":"5","D2":"R","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-25-R-S-01","Style":"Standard","Quality":"m7♭5","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":4,"S3":3,"S2":4,"S1":null,"D6":null,"D5":"R","D4":"b5","D3":"b7","D2":"b3","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-25-1-S-01","Style":"Standard","Quality":"m7♭5","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":6,"S4":8,"S3":5,"S2":7,"S1":null,"D6":null,"D5":"b3","D4":"b7","D3":"R","D2":"b5","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-25-2-S-01","Style":"Standard","Quality":"m7♭5","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":9,"S4":10,"S3":8,"S2":11,"S1":null,"D6":null,"D5":"b5","D4":"R","D3":"b3","D2":"b7","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-25-3-S-01","Style":"Standard","Quality":"m7♭5","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":13,"S3":11,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"b3","D3":"b5","D2":"R","D1":null,"Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-14-R-S-01","Style":"Standard","Quality":"Maj7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":12,"S2":12,"S1":12,"D6":null,"D5":null,"D4":"R","D3":"5","D2":"7","D1":"3","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-14-1-S-01","Style":"Standard","Quality":"Maj7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":2,"S3":4,"S2":1,"S1":3,"D6":null,"D5":null,"D4":"3","D3":"7","D2":"R","D1":"5","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-14-2-S-01","Style":"Standard","Quality":"Maj7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":5,"S1":7,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"3","D1":"7","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"M7-14-3-S-01","Style":"Standard","Quality":"Maj7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":9,"S3":9,"S2":8,"S1":8,"D6":null,"D5":null,"D4":"7","D3":"3","D2":"5","D1":"R","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-14-R-S-01","Style":"Standard","Quality":"7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":12,"S2":11,"S1":12,"D6":null,"D5":null,"D4":"R","D3":"5","D2":"b7","D1":"3","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-14-1-S-01","Style":"Standard","Quality":"7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":2,"S3":3,"S2":1,"S1":3,"D6":null,"D5":null,"D4":"3","D3":"b7","D2":"R","D1":"5","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-14-2-S-01","Style":"Standard","Quality":"7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":5,"S1":6,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"3","D1":"b7","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"7-14-3-S-01","Style":"Standard","Quality":"7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":9,"S2":8,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"3","D2":"5","D1":"R","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-14-R-S-01","Style":"Standard","Quality":"m7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":12,"S2":11,"S1":11,"D6":null,"D5":null,"D4":"R","D3":"5","D2":"b7","D1":"b3","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-14-1-S-01","Style":"Standard","Quality":"m7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":1,"S3":3,"S2":1,"S1":3,"D6":null,"D5":null,"D4":"b3","D3":"b7","D2":"R","D1":"5","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-14-2-S-01","Style":"Standard","Quality":"m7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":4,"S1":6,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"b3","D1":"b7","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7-14-3-S-01","Style":"Standard","Quality":"m7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":8,"S2":8,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"b3","D2":"5","D1":"R","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-14-R-S-01","Style":"Standard","Quality":"m7♭5","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":11,"S2":11,"S1":11,"D6":null,"D5":null,"D4":"R","D3":"b5","D2":"b7","D1":"b3","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-14-1-S-01","Style":"Standard","Quality":"m7♭5","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":1,"S3":3,"S2":1,"S1":2,"D6":null,"D5":null,"D4":"b3","D3":"b7","D2":"R","D1":"b5","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-14-2-S-01","Style":"Standard","Quality":"m7♭5","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":4,"S3":5,"S2":4,"S1":6,"D6":null,"D5":null,"D4":"b5","D3":"R","D2":"b3","D1":"b7","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"},{"ID":"m7b5-14-3-S-01","Style":"Standard","Quality":"m7♭5","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":8,"S2":7,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"b3","D2":"b5","D1":"R","Priority":1,"Notes":"C基準","Duplicate Check":"OK","Required Check":"OK"}],"practical":[{"Status":"Approved","ID":"M7-25-R-P-01","Based On":"M7-25-R-S-01","Style":"Practical","Quality":"Maj7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":4,"S2":5,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"7","D2":"3","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-25-1-P-01","Based On":"M7-25-1-S-01","Style":"Practical","Quality":"Maj7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":7,"S4":9,"S3":7,"S2":8,"S1":null,"D6":null,"D5":"3","D4":"7","D3":9,"D2":"5","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"R→9","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-25-2-P-01","Based On":"M7-25-2-S-01","Style":"Practical","Quality":"Maj7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":null,"S3":9,"S2":12,"S1":null,"D6":null,"D5":"5","D4":null,"D3":"3","D2":"7","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"omit R","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-25-3-P-01","Based On":"M7-25-3-S-01","Style":"Practical","Quality":"Maj7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":15,"S4":14,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"R","D4":"3","D3":"5","D2":"R","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"avoid b9 interval","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-25-R-P-01","Based On":"7-25-R-S-01","Style":"Practical","Quality":"7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":3,"S2":5,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"b7","D2":"3","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-25-1-P-01","Based On":"7-25-1-S-01","Style":"Practical","Quality":"7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":7,"S4":8,"S3":7,"S2":8,"S1":null,"D6":null,"D5":"3","D4":"b7","D3":9,"D2":"5","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"R→9","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-25-2-P-01","Based On":"7-25-2-S-01","Style":"Practical","Quality":"7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":10,"S3":9,"S2":11,"S1":null,"D6":null,"D5":"5","D4":"R","D3":"3","D2":"b7","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-25-3-P-01","Based On":"7-25-3-S-01","Style":"Practical","Quality":"7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":14,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"3","D3":"5","D2":"R","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-25-R-P-01","Based On":"m7-25-R-S-01","Style":"Practical","Quality":"m7","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":5,"S3":3,"S2":4,"S1":null,"D6":null,"D5":"R","D4":"5","D3":"b7","D2":"b3","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-25-1-P-01","Based On":"m7-25-1-S-01","Style":"Practical","Quality":"m7","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":6,"S4":8,"S3":7,"S2":8,"S1":null,"D6":null,"D5":"b3","D4":"b7","D3":9,"D2":"5","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"R→9","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-25-2-P-01","Based On":"m7-25-2-S-01","Style":"Practical","Quality":"m7","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":10,"S4":null,"S3":8,"S2":11,"S1":null,"D6":null,"D5":"5","D4":null,"D3":"b3","D2":"b7","D1":null,"Priority":1,"Changed Notes":1,"Use Case":"omit R","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-25-3-P-01","Based On":"m7-25-3-S-01","Style":"Practical","Quality":"m7","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":13,"S3":12,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"b3","D3":"5","D2":"R","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-25-R-P-01","Based On":"m7b5-25-R-S-01","Style":"Practical","Quality":"m7♭5","String Set":"2–5","Inversion":"Root","Variant":1,"S6":null,"S5":3,"S4":4,"S3":3,"S2":4,"S1":null,"D6":null,"D5":"R","D4":"b5","D3":"b7","D2":"b3","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-25-1-P-01","Based On":"m7b5-25-1-S-01","Style":"Practical","Quality":"m7♭5","String Set":"2–5","Inversion":"1st","Variant":1,"S6":null,"S5":6,"S4":8,"S3":5,"S2":7,"S1":null,"D6":null,"D5":"b3","D4":"b7","D3":"R","D2":"b5","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-25-2-P-01","Based On":"m7b5-25-2-S-01","Style":"Practical","Quality":"m7♭5","String Set":"2–5","Inversion":"2nd","Variant":1,"S6":null,"S5":9,"S4":10,"S3":8,"S2":11,"S1":null,"D6":null,"D5":"b5","D4":"R","D3":"b3","D2":"b7","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-25-3-P-01","Based On":"m7b5-25-3-S-01","Style":"Practical","Quality":"m7♭5","String Set":"2–5","Inversion":"3rd","Variant":1,"S6":null,"S5":13,"S4":13,"S3":11,"S2":13,"S1":null,"D6":null,"D5":"b7","D4":"b3","D3":"b5","D2":"R","D1":null,"Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-14-R-P-01","Based On":"M7-14-R-S-01","Style":"Practical","Quality":"Maj7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":12,"S2":12,"S1":12,"D6":null,"D5":null,"D4":"R","D3":"5","D2":"7","D1":"3","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-14-1-P-01","Based On":"M7-14-1-S-01","Style":"Practical","Quality":"Maj7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":2,"S3":2,"S2":3,"S1":3,"D6":null,"D5":null,"D4":"3","D3":6,"D2":9,"D1":"5","Priority":1,"Changed Notes":2,"Use Case":"Berklee chord","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-14-2-P-01","Based On":"M7-14-2-S-01","Style":"Practical","Quality":"Maj7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":5,"S1":7,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"3","D1":"7","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"M7-14-3-P-01","Based On":"M7-14-3-S-01","Style":"Practical","Quality":"Maj7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":7,"S3":7,"S2":8,"S1":8,"D6":null,"D5":null,"D4":6,"D3":9,"D2":"5","D1":"R","Priority":1,"Changed Notes":2,"Use Case":"Berklee chord","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-14-R-P-01","Based On":"7-14-R-S-01","Style":"Practical","Quality":"7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":12,"S2":11,"S1":12,"D6":null,"D5":null,"D4":"R","D3":"5","D2":"b7","D1":"3","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-14-1-P-01","Based On":"7-14-1-S-01","Style":"Practical","Quality":"7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":2,"S3":3,"S2":1,"S1":3,"D6":null,"D5":null,"D4":"3","D3":"b7","D2":9,"D1":"5","Priority":1,"Changed Notes":1,"Use Case":"R→9","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-14-2-P-01","Based On":"7-14-2-S-01","Style":"Practical","Quality":"7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":5,"S1":6,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"3","D1":"b7","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"7-14-3-P-01","Based On":"7-14-3-S-01","Style":"Practical","Quality":"7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":9,"S2":8,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"3","D2":"5","D1":"R","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-14-R-P-01","Based On":"m7-14-R-S-01","Style":"Practical","Quality":"m7","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":10,"S2":11,"S1":11,"D6":null,"D5":null,"D4":"R","D3":11,"D2":"b7","D1":"b3","Priority":1,"Changed Notes":1,"Use Case":"5→11","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-14-1-P-01","Based On":"m7-14-1-S-01","Style":"Practical","Quality":"m7","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":1,"S3":3,"S2":1,"S1":3,"D6":null,"D5":null,"D4":"b3","D3":"b7","D2":"R","D1":"5","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-14-2-P-01","Based On":"m7-14-2-S-01","Style":"Practical","Quality":"m7","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":5,"S3":5,"S2":4,"S1":6,"D6":null,"D5":null,"D4":"5","D3":"R","D2":"b3","D1":"b7","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7-14-3-P-01","Based On":"m7-14-3-S-01","Style":"Practical","Quality":"m7","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":8,"S2":8,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"b3","D2":"5","D1":"R","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-14-R-P-01","Based On":"m7b5-14-R-S-01","Style":"Practical","Quality":"m7♭5","String Set":"1–4","Inversion":"Root","Variant":1,"S6":null,"S5":null,"S4":10,"S3":11,"S2":11,"S1":11,"D6":null,"D5":null,"D4":"R","D3":"b5","D2":"b7","D1":"b3","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-14-1-P-01","Based On":"m7b5-14-1-S-01","Style":"Practical","Quality":"m7♭5","String Set":"1–4","Inversion":"1st","Variant":1,"S6":null,"S5":null,"S4":1,"S3":3,"S2":1,"S1":2,"D6":null,"D5":null,"D4":"b3","D3":"b7","D2":"R","D1":"b5","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-14-2-P-01","Based On":"m7b5-14-2-S-01","Style":"Practical","Quality":"m7♭5","String Set":"1–4","Inversion":"2nd","Variant":1,"S6":null,"S5":null,"S4":4,"S3":5,"S2":4,"S1":6,"D6":null,"D5":null,"D4":"b5","D3":"R","D2":"b3","D1":"b7","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"},{"Status":"Approved","ID":"m7b5-14-3-P-01","Based On":"m7b5-14-3-S-01","Style":"Practical","Quality":"m7♭5","String Set":"1–4","Inversion":"3rd","Variant":1,"S6":null,"S5":null,"S4":8,"S3":8,"S2":7,"S1":8,"D6":null,"D5":null,"D4":"b7","D3":"b3","D2":"b5","D1":"R","Priority":1,"Changed Notes":0,"Use Case":"same as std","Duplicate Check":"OK","Required Check":"OK"}]};
+/* Demo data for the fretboard component.
+   Replace or expand this file with your Standard / Practical libraries. */
+window.GVL_DATA = {
+  roots: ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"],
+  qualities: ["Maj7", "7", "m7", "m7b5"],
+  inversions: ["Root", "1st", "2nd", "3rd"],
+  stringSets: ["2-5", "1-4"],
+  libraries: ["Standard", "Practical"],
+
+  forms: [
+    {
+      id: "M7-25-R-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "Maj7",
+      inversion: "Root",
+      stringSet: "2-5",
+      frets: [3, 5, 4, 5],
+      degrees: ["R", "5", "7", "3"],
+      useCase: "Balanced root-position Drop 2 form."
+    },
+    {
+      id: "M7-25-1-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "Maj7",
+      inversion: "1st",
+      stringSet: "2-5",
+      frets: [7, 7, 9, 8],
+      degrees: ["3", "7", "R", "5"],
+      useCase: "Smooth connection from nearby root-position forms."
+    },
+    {
+      id: "M7-25-2-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "Maj7",
+      inversion: "2nd",
+      stringSet: "2-5",
+      frets: [10, 9, 9, 8],
+      degrees: ["5", "R", "3", "7"],
+      useCase: "Compact upper-position form."
+    },
+    {
+      id: "M7-25-3-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "Maj7",
+      inversion: "3rd",
+      stringSet: "2-5",
+      frets: [2, 2, 1, 1],
+      degrees: ["7", "3", "5", "R"],
+      useCase: "Low-position leading-tone voicing."
+    },
+
+    {
+      id: "7-25-R-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "7",
+      inversion: "Root",
+      stringSet: "2-5",
+      frets: [3, 5, 3, 5],
+      degrees: ["R", "5", "b7", "3"],
+      useCase: "Core dominant Drop 2 sound."
+    },
+    {
+      id: "7-25-1-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "7",
+      inversion: "1st",
+      stringSet: "2-5",
+      frets: [7, 6, 8, 8],
+      degrees: ["3", "b7", "R", "5"],
+      useCase: "Useful for chromatic dominant movement."
+    },
+    {
+      id: "7-25-2-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "7",
+      inversion: "2nd",
+      stringSet: "2-5",
+      frets: [10, 9, 8, 8],
+      degrees: ["5", "R", "3", "b7"],
+      useCase: "Clear top-note dominant voicing."
+    },
+    {
+      id: "7-25-3-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "7",
+      inversion: "3rd",
+      stringSet: "2-5",
+      frets: [1, 2, 1, 1],
+      degrees: ["b7", "3", "5", "R"],
+      useCase: "Compact low-position dominant form."
+    },
+
+    {
+      id: "m7-25-R-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7",
+      inversion: "Root",
+      stringSet: "2-5",
+      frets: [3, 5, 3, 4],
+      degrees: ["R", "5", "b7", "b3"],
+      useCase: "Fundamental minor-seventh Drop 2 form."
+    },
+    {
+      id: "m7-25-1-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7",
+      inversion: "1st",
+      stringSet: "2-5",
+      frets: [6, 6, 8, 8],
+      degrees: ["b3", "b7", "R", "5"],
+      useCase: "Warm first-inversion minor sound."
+    },
+    {
+      id: "m7-25-2-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7",
+      inversion: "2nd",
+      stringSet: "2-5",
+      frets: [10, 8, 8, 8],
+      degrees: ["5", "R", "b3", "b7"],
+      useCase: "Convenient upper-register minor form."
+    },
+    {
+      id: "m7-25-3-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7",
+      inversion: "3rd",
+      stringSet: "2-5",
+      frets: [1, 1, 1, 1],
+      degrees: ["b7", "b3", "5", "R"],
+      useCase: "Simple low-position minor-seventh shape."
+    },
+
+    {
+      id: "m7b5-25-R-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7b5",
+      inversion: "Root",
+      stringSet: "2-5",
+      frets: [3, 4, 3, 4],
+      degrees: ["R", "b5", "b7", "b3"],
+      useCase: "Essential half-diminished root position."
+    },
+    {
+      id: "m7b5-25-1-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7b5",
+      inversion: "1st",
+      stringSet: "2-5",
+      frets: [6, 6, 7, 8],
+      degrees: ["b3", "b7", "R", "b5"],
+      useCase: "Smooth minor ii–V voice leading."
+    },
+    {
+      id: "m7b5-25-2-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7b5",
+      inversion: "2nd",
+      stringSet: "2-5",
+      frets: [9, 8, 8, 8],
+      degrees: ["b5", "R", "b3", "b7"],
+      useCase: "Compact upper-register half-diminished form."
+    },
+    {
+      id: "m7b5-25-3-01",
+      library: "Standard",
+      category: "Drop2",
+      quality: "m7b5",
+      inversion: "3rd",
+      stringSet: "2-5",
+      frets: [1, 1, 0, 1],
+      degrees: ["b7", "b3", "b5", "R"],
+      useCase: "Open-string example for component testing."
+    }
+  ]
+};
