@@ -234,20 +234,26 @@
   }
 
   function renderChordControls() {
+    const rootOptions = ["", ...DATA.roots];
+
     return state.chords.map((chord, index) => `
-      <div class="chord-row">
+      <div class="chord-row ${chord.root ? "" : "is-empty"}">
         <div class="chord-number">Chord ${index + 1}</div>
 
         <div class="control-group">
           <label for="chordRoot${index}">Root</label>
           <select id="chordRoot${index}" data-chord-index="${index}" data-chord-field="root">
-            ${options(DATA.roots, chord.root)}
+            ${rootOptions.map((item) => `
+              <option value="${escapeHtml(item)}"${item === chord.root ? " selected" : ""}>
+                ${item ? escapeHtml(item) : "—"}
+              </option>
+            `).join("")}
           </select>
         </div>
 
         <div class="control-group">
           <label for="chordQuality${index}">Quality</label>
-          <select id="chordQuality${index}" data-chord-index="${index}" data-chord-field="quality">
+          <select id="chordQuality${index}" data-chord-index="${index}" data-chord-field="quality"${chord.root ? "" : " disabled"}>
             ${options(DATA.qualities, chord.quality)}
           </select>
         </div>
@@ -257,6 +263,9 @@
 
   function renderVoicingLibrary() {
     const forms = currentForms();
+    const activeChords = state.chords
+      .map((chord, index) => ({ ...chord, originalIndex: index }))
+      .filter((chord) => chord.root);
 
     app.innerHTML = `
       ${commonControls({ includeRoot: false })}
@@ -266,17 +275,37 @@
       </section>
 
       <div class="section-heading">
-        <h2>Voicings</h2>
-        <p>4 chords x 4 inversions</p>
+        <h2>Chord Changes</h2>
+        <p>${activeChords.length} ${activeChords.length === 1 ? "chord" : "chords"} x 4 patterns</p>
       </div>
 
-      <section id="voicingGrid" class="voicing-grid"></section>
+      <section id="patternList" class="pattern-list"></section>
     `;
 
-    const grid = document.querySelector("#voicingGrid");
+    const list = document.querySelector("#patternList");
 
-    state.chords.forEach((chord, chordIndex) => {
-      DATA.inversions.forEach((inversion) => {
+    if (activeChords.length === 0) {
+      list.innerHTML = `<div class="empty-state panel">Select at least one chord.</div>`;
+      return;
+    }
+
+    DATA.inversions.forEach((_, patternIndex) => {
+      const group = document.createElement("section");
+      group.className = "pattern-group";
+
+      const heading = document.createElement("div");
+      heading.className = "pattern-heading";
+      heading.innerHTML = `
+        <h3>Pattern ${patternIndex + 1}</h3>
+        <p>${activeChords.map((chord) => `${escapeHtml(chord.root)}${escapeHtml(displayQuality(chord.quality))}`).join(" &rarr; ")}</p>
+      `;
+
+      const grid = document.createElement("div");
+      grid.className = "pattern-grid";
+
+      activeChords.forEach((chord, sequenceIndex) => {
+        const inversionIndex = (patternIndex - sequenceIndex + DATA.inversions.length) % DATA.inversions.length;
+        const inversion = DATA.inversions[inversionIndex];
         const form = forms.find((item) =>
           item.quality === chord.quality && item.inversion === inversion
         );
@@ -284,34 +313,38 @@
         const card = document.createElement("article");
         card.className = "voicing-card";
 
-        if (!form) {
-          card.innerHTML = `
-            <h3>${escapeHtml(chord.root)}${escapeHtml(displayQuality(chord.quality))}</h3>
-            <p>${escapeHtml(inversion)}</p>
-            <div class="empty-state">No form</div>
-          `;
-          grid.appendChild(card);
-          return;
-        }
-
-        const title = document.createElement("h3");
+        const title = document.createElement("h4");
         title.textContent = `${chord.root}${displayQuality(chord.quality)}`;
 
         const meta = document.createElement("p");
-        meta.textContent = `${inversion} - Chord ${chordIndex + 1}`;
+        meta.textContent = `${inversion} - Chord ${chord.originalIndex + 1}`;
 
-        const host = document.createElement("div");
-        host.className = "fretboard-host";
+        card.append(title, meta);
 
-        card.append(title, meta, host);
+        if (!form) {
+          const empty = document.createElement("div");
+          empty.className = "empty-state compact";
+          empty.textContent = "No form";
+          card.appendChild(empty);
+        } else {
+          const host = document.createElement("div");
+          host.className = "fretboard-host";
+          card.appendChild(host);
+
+          requestAnimationFrame(() => {
+            Fretboard.render(host, transposeForm(form, chord.root), {
+              size: "small",
+              orientation: state.orientation,
+              showDegrees: state.showDegrees
+            });
+          });
+        }
+
         grid.appendChild(card);
-
-        Fretboard.render(host, transposeForm(form, chord.root), {
-          size: "small",
-          orientation: state.orientation,
-          showDegrees: state.showDegrees
-        });
       });
+
+      group.append(heading, grid);
+      list.appendChild(group);
     });
   }
 
@@ -352,7 +385,8 @@
     document.querySelectorAll("[data-chord-index]").forEach((select) => {
       select.addEventListener("change", () => {
         const index = Number(select.dataset.chordIndex);
-        state.chords[index][select.dataset.chordField] = select.value;
+        const field = select.dataset.chordField;
+        state.chords[index][field] = select.value;
         render();
       });
     });
