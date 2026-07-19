@@ -159,25 +159,6 @@ h1 {
   padding: 22px 16px calc(34px + var(--safe-bottom));
 }
 
-.hero {
-  padding: 6px 4px 20px;
-}
-
-.hero h2 {
-  margin: 0 0 8px;
-  font-size: clamp(32px, 9vw, 52px);
-  letter-spacing: -0.055em;
-  line-height: .98;
-}
-
-.hero p {
-  margin: 0;
-  max-width: 38rem;
-  color: var(--secondary);
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 .home-grid {
   display: grid;
   gap: 14px;
@@ -472,7 +453,7 @@ select {
 
 .voicing-card {
   min-width: 0;
-  padding: 12px;
+  padding: 10px;
   background: var(--surface);
 }
 
@@ -484,7 +465,7 @@ select {
 }
 
 .voicing-card p {
-  margin: 0 0 8px;
+  margin: 0 0 5px;
   color: var(--secondary);
   font-size: 11px;
 }
