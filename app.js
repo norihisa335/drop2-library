@@ -378,9 +378,21 @@
 
   render();
 
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(console.error);
-    });
-  }
+  // Development build: remove old service workers and caches so CSS/JS/data
+  // can never become mixed between releases on iOS Safari.
+  window.addEventListener("load", async () => {
+    try {
+      if ("serviceWorker" in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map((registration) => registration.unregister()));
+      }
+
+      if ("caches" in window) {
+        const cacheNames = await caches.keys();
+        await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+      }
+    } catch (error) {
+      console.warn("Cache cleanup skipped:", error);
+    }
+  });
 })();
