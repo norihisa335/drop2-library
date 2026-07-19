@@ -71,14 +71,14 @@
       <section class="home-grid">
         <button class="nav-card" data-go="forms" type="button">
           <span class="card-kicker">FORMS</span>
-          <span class="arrow">âº</span>
+          <span class="arrow">›</span>
           <h2>Form Library</h2>
           <p>Browse voicing forms</p>
         </button>
 
         <button class="nav-card" data-go="voicings" type="button">
           <span class="card-kicker">PROGRESSIONS</span>
-          <span class="arrow">âº</span>
+          <span class="arrow">›</span>
           <h2>Voicing Library</h2>
           <p>Explore chord progressions</p>
         </button>
@@ -124,7 +124,7 @@
       form.library === state.library && form.stringSet === state.stringSet
     );
 
-    // Demo fallback while Practical and 1â4 data are still being entered.
+    // Demo fallback while Practical and 1–4 data are still being entered.
     return exact.length ? exact : DATA.forms.filter((form) => form.stringSet === "2-5");
   }
 
@@ -148,7 +148,7 @@
           <div class="table-cell">
             ${form
               ? `<button class="form-button ${form.id === state.selectedFormId ? "selected" : ""}" data-form-id="${escapeHtml(form.id)}" type="button">${escapeHtml(inversion)}</button>`
-              : `<span aria-hidden="true">â</span>`}
+              : `<span aria-hidden="true">—</span>`}
           </div>
         `);
       });
@@ -176,7 +176,7 @@
           <div class="selected-meta">
             <div>
               <h3>${escapeHtml(state.root)}${escapeHtml(selected.quality)}</h3>
-              <p>${escapeHtml(selected.inversion)} Â· ${escapeHtml(selected.category)}</p>
+              <p>${escapeHtml(selected.inversion)} · ${escapeHtml(selected.category)}</p>
             </div>
             <p>${escapeHtml(selected.stringSet)}</p>
           </div>
@@ -232,7 +232,7 @@
 
       <div class="section-heading">
         <h2>Voicings</h2>
-        <p>4 chords Ã 4 inversions</p>
+        <p>4 chords × 4 inversions</p>
       </div>
 
       <section id="voicingGrid" class="voicing-grid"></section>
@@ -262,7 +262,7 @@
         const title = document.createElement("h3");
         title.textContent = `${chord.root}${chord.quality}`;
         const meta = document.createElement("p");
-        meta.textContent = `${inversion} Â· Chord ${chordIndex + 1}`;
+        meta.textContent = `${inversion} · Chord ${chordIndex + 1}`;
         const host = document.createElement("div");
         host.className = "fretboard-host";
 
