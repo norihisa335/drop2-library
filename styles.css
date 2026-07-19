@@ -1,16 +1,247 @@
-:root{color-scheme:light dark;--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--secondary:#6e6e73;--line:rgba(60,60,67,.18);--accent:#007aff;--accent-soft:rgba(0,122,255,.12);--shadow:0 12px 36px rgba(0,0,0,.07)}
-*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top right,rgba(0,122,255,.07),transparent 34rem),var(--bg);-webkit-font-smoothing:antialiased}
-button,select{font:inherit;color:inherit}.app-shell{width:min(100%,760px);margin:auto;padding:max(24px,env(safe-area-inset-top)) 18px max(40px,env(safe-area-inset-bottom))}
-.app-header{padding:28px 4px 30px}.brand-mark{width:48px;height:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;margin-bottom:22px;border-radius:14px;background:var(--text);box-shadow:var(--shadow)}.brand-mark span{border-radius:999px;background:var(--bg)}
-h1,h2,h3,p{margin-top:0}h1{margin-bottom:0;font-size:clamp(2rem,8vw,3.3rem);line-height:.98;letter-spacing:-.055em;max-width:560px}h2{margin:12px 0 24px;font-size:2rem;letter-spacing:-.04em}
-.page{display:none}.page.is-active{display:block;animation:fade .18s ease-out}@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.library-card{width:100%;min-height:128px;display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:24px;margin-bottom:18px;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:var(--shadow);text-align:left;cursor:pointer}.library-card:active{transform:scale(.985)}
-.card-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:var(--accent-soft);color:var(--accent);font-size:1.6rem;font-weight:700}.card-copy{display:grid;gap:7px}.card-copy strong{font-size:1.18rem}.card-copy small{color:var(--secondary);font-size:1rem}.chevron{color:var(--secondary);font-size:2rem}
-.back-button{border:0;padding:8px 0;background:transparent;color:var(--accent);cursor:pointer}.segmented-control{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:4px;margin-bottom:20px;border-radius:13px;background:rgba(118,118,128,.16)}.segmented-control button{min-height:38px;border:0;border-radius:10px;background:transparent}.segmented-control .is-selected{background:var(--card);box-shadow:0 1px 5px rgba(0,0,0,.11);font-weight:650}
-.settings-card,.detail-card,.chord-card{overflow:hidden;margin-bottom:20px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}.setting-row{min-height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--line)}.setting-row:last-child{border-bottom:0}select{max-width:52%;border:0;background:transparent;color:var(--accent);text-align:right}
-.control-label{display:block;margin:0 0 8px 4px;color:var(--secondary);font-size:.82rem;font-weight:650;text-transform:uppercase;letter-spacing:.06em}.diagram-table-wrap{overflow-x:auto;margin-bottom:20px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}table{width:100%;min-width:520px;border-collapse:collapse}th,td{padding:14px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-size:.82rem}tr:last-child th,tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}tbody th{text-align:left}
-.detail-card{padding:20px}.eyebrow{color:var(--secondary);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}.diagram-placeholder{min-height:180px;display:grid;place-items:center;margin:16px 0 20px;border:1px dashed var(--line);border-radius:12px;color:var(--secondary)}.detail-card p{margin-bottom:0;color:var(--secondary)}
-.chord-grid{display:grid;gap:14px;margin-bottom:20px}.chord-card{padding:16px;margin:0}.chord-card label{min-height:48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line)}
-.voicing-matrix{display:grid;grid-template-columns:34px repeat(4,minmax(82px,1fr));gap:8px;overflow-x:auto}.matrix-heading,.matrix-row-label{display:grid;place-items:center;color:var(--secondary);font-size:.75rem;font-weight:650}.mini-diagram{min-height:108px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--secondary)}
-@media(min-width:620px){.chord-grid{grid-template-columns:1fr 1fr}}
-@media(prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--secondary:#a1a1a6;--line:rgba(84,84,88,.62);--accent:#0a84ff;--accent-soft:rgba(10,132,255,.18);--shadow:none}}
+:root {
+    color-scheme:light dark;
+    --bg:#f5f5f7;
+    --card:#fff;
+    --text:#1d1d1f;
+    --secondary:#6e6e73;
+    --line:rgba(60, 60, 67, .18);
+    --accent:#007aff;
+    --accent-soft:rgba(0, 122, 255, .12);
+    --shadow:0 12px 36px rgba(0, 0, 0, .07)}
+    * {
+        box-sizing:border-box}
+        html {
+            background:var(--bg)}
+            body {
+                margin:0;
+                min-height:100vh;
+                font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+                color:var(--text);
+                background:radial-gradient(circle at top right, rgba(0, 122, 255, .07), transparent 34rem), var(--bg);
+                -webkit-font-smoothing:antialiased}
+                button, select {
+                    font:inherit;
+                    color:inherit}
+                    .app-shell {
+                        width:min(100%, 760px);
+                        margin:auto;
+                        padding:max(24px, env(safe-area-inset-top)) 18px max(40px, env(safe-area-inset-bottom))}
+                        .app-header {
+                            padding:28px 4px 30px}
+                            .brand-mark {
+                                width:48px;
+                                height:48px;
+                                display:grid;
+                                grid-template-columns:repeat(4, 1fr);
+                                gap:4px;
+                                padding:8px;
+                                margin-bottom:22px;
+                                border-radius:14px;
+                                background:var(--text);
+                                box-shadow:var(--shadow)}
+                                .brand-mark span {
+                                    border-radius:999px;
+                                    background:var(--bg)}
+                                    h1, h2, h3, p {
+                                        margin-top:0}
+                                        h1 {
+                                            margin-bottom:0;
+                                            font-size:clamp(2rem, 8vw, 3.3rem);
+                                            line-height:.98;
+                                            letter-spacing:-.055em;
+                                            max-width:560px}
+                                            h2 {
+                                                margin:12px 0 24px;
+                                                font-size:2rem;
+                                                letter-spacing:-.04em}
+                                                .page {
+                                                    display:none}
+                                                    .page.is-active {
+                                                        display:block;
+                                                        animation:fade .18s ease-out}
+                                                        @keyframes fade {
+                                                            from {
+                                                                opacity:0;
+                                                                transform:translateY(5px)}
+                                                                to {
+                                                                    opacity:1;
+                                                                    transform:none}
+                                                                }
+                                                                .library-card {
+                                                                    width:100%;
+                                                                    min-height:128px;
+                                                                    display:grid;
+                                                                    grid-template-columns:52px 1fr auto;
+                                                                    gap:16px;
+                                                                    align-items:center;
+                                                                    padding:24px;
+                                                                    margin-bottom:18px;
+                                                                    border:1px solid var(--line);
+                                                                    border-radius:22px;
+                                                                    background:var(--card);
+                                                                    box-shadow:var(--shadow);
+                                                                    text-align:left;
+                                                                    cursor:pointer}
+                                                                    .library-card:active {
+                                                                        transform:scale(.985)}
+                                                                        .card-icon {
+                                                                            width:52px;
+                                                                            height:52px;
+                                                                            display:grid;
+                                                                            place-items:center;
+                                                                            border-radius:15px;
+                                                                            background:var(--accent-soft);
+                                                                            color:var(--accent);
+                                                                            font-size:1.6rem;
+                                                                            font-weight:700}
+                                                                            .card-copy {
+                                                                                display:grid;
+                                                                                gap:7px}
+                                                                                .card-copy strong {
+                                                                                    font-size:1.18rem}
+                                                                                    .card-copy small {
+                                                                                        color:var(--secondary);
+                                                                                        font-size:1rem}
+                                                                                        .chevron {
+                                                                                            color:var(--secondary);
+                                                                                            font-size:2rem}
+                                                                                            .back-button {
+                                                                                                border:0;
+                                                                                                padding:8px 0;
+                                                                                                background:transparent;
+                                                                                                color:var(--accent);
+                                                                                                cursor:pointer}
+                                                                                                .segmented-control {
+                                                                                                    display:grid;
+                                                                                                    grid-template-columns:1fr 1fr;
+                                                                                                    gap:3px;
+                                                                                                    padding:4px;
+                                                                                                    margin-bottom:20px;
+                                                                                                    border-radius:13px;
+                                                                                                    background:rgba(118, 118, 128, .16)}
+                                                                                                    .segmented-control button {
+                                                                                                        min-height:38px;
+                                                                                                        border:0;
+                                                                                                        border-radius:10px;
+                                                                                                        background:transparent}
+                                                                                                        .segmented-control .is-selected {
+                                                                                                            background:var(--card);
+                                                                                                            box-shadow:0 1px 5px rgba(0, 0, 0, .11);
+                                                                                                            font-weight:650}
+                                                                                                            .settings-card, .detail-card, .chord-card {
+                                                                                                                overflow:hidden;
+                                                                                                                margin-bottom:20px;
+                                                                                                                border:1px solid var(--line);
+                                                                                                                border-radius:16px;
+                                                                                                                background:var(--card);
+                                                                                                                box-shadow:var(--shadow)}
+                                                                                                                .setting-row {
+                                                                                                                    min-height:58px;
+                                                                                                                    display:flex;
+                                                                                                                    align-items:center;
+                                                                                                                    justify-content:space-between;
+                                                                                                                    padding:0 16px;
+                                                                                                                    border-bottom:1px solid var(--line)}
+                                                                                                                    .setting-row:last-child {
+                                                                                                                        border-bottom:0}
+                                                                                                                        select {
+                                                                                                                            max-width:52%;
+                                                                                                                            border:0;
+                                                                                                                            background:transparent;
+                                                                                                                            color:var(--accent);
+                                                                                                                            text-align:right}
+                                                                                                                            .control-label {
+                                                                                                                                display:block;
+                                                                                                                                margin:0 0 8px 4px;
+                                                                                                                                color:var(--secondary);
+                                                                                                                                font-size:.82rem;
+                                                                                                                                font-weight:650;
+                                                                                                                                text-transform:uppercase;
+                                                                                                                                letter-spacing:.06em}
+                                                                                                                                .diagram-table-wrap {
+                                                                                                                                    overflow-x:auto;
+                                                                                                                                    margin-bottom:20px;
+                                                                                                                                    border:1px solid var(--line);
+                                                                                                                                    border-radius:16px;
+                                                                                                                                    background:var(--card);
+                                                                                                                                    box-shadow:var(--shadow)}
+                                                                                                                                    table {
+                                                                                                                                        width:100%;
+                                                                                                                                        min-width:520px;
+                                                                                                                                        border-collapse:collapse}
+                                                                                                                                        th, td {
+                                                                                                                                            padding:14px 12px;
+                                                                                                                                            border-right:1px solid var(--line);
+                                                                                                                                            border-bottom:1px solid var(--line);
+                                                                                                                                            text-align:center;
+                                                                                                                                            font-size:.82rem}
+                                                                                                                                            tr:last-child th, tr:last-child td {
+                                                                                                                                                border-bottom:0}
+                                                                                                                                                th:last-child, td:last-child {
+                                                                                                                                                    border-right:0}
+                                                                                                                                                    tbody th {
+                                                                                                                                                        text-align:left}
+                                                                                                                                                        .detail-card {
+                                                                                                                                                            padding:20px}
+                                                                                                                                                            .eyebrow {
+                                                                                                                                                                color:var(--secondary);
+                                                                                                                                                                font-size:.78rem;
+                                                                                                                                                                font-weight:700;
+                                                                                                                                                                text-transform:uppercase;
+                                                                                                                                                                letter-spacing:.07em}
+                                                                                                                                                                .diagram-placeholder {
+                                                                                                                                                                    min-height:180px;
+                                                                                                                                                                    display:grid;
+                                                                                                                                                                    place-items:center;
+                                                                                                                                                                    margin:16px 0 20px;
+                                                                                                                                                                    border:1px dashed var(--line);
+                                                                                                                                                                    border-radius:12px;
+                                                                                                                                                                    color:var(--secondary)}
+                                                                                                                                                                    .detail-card p {
+                                                                                                                                                                        margin-bottom:0;
+                                                                                                                                                                        color:var(--secondary)}
+                                                                                                                                                                        .chord-grid {
+                                                                                                                                                                            display:grid;
+                                                                                                                                                                            gap:14px;
+                                                                                                                                                                            margin-bottom:20px}
+                                                                                                                                                                            .chord-card {
+                                                                                                                                                                                padding:16px;
+                                                                                                                                                                                margin:0}
+                                                                                                                                                                                .chord-card label {
+                                                                                                                                                                                    min-height:48px;
+                                                                                                                                                                                    display:flex;
+                                                                                                                                                                                    align-items:center;
+                                                                                                                                                                                    justify-content:space-between;
+                                                                                                                                                                                    border-top:1px solid var(--line)}
+                                                                                                                                                                                    .voicing-matrix {
+                                                                                                                                                                                        display:grid;
+                                                                                                                                                                                        grid-template-columns:34px repeat(4, minmax(82px, 1fr));
+                                                                                                                                                                                        gap:8px;
+                                                                                                                                                                                        overflow-x:auto}
+                                                                                                                                                                                        .matrix-heading, .matrix-row-label {
+                                                                                                                                                                                            display:grid;
+                                                                                                                                                                                            place-items:center;
+                                                                                                                                                                                            color:var(--secondary);
+                                                                                                                                                                                            font-size:.75rem;
+                                                                                                                                                                                            font-weight:650}
+                                                                                                                                                                                            .mini-diagram {
+                                                                                                                                                                                                min-height:108px;
+                                                                                                                                                                                                border:1px solid var(--line);
+                                                                                                                                                                                                border-radius:12px;
+                                                                                                                                                                                                background:var(--card);
+                                                                                                                                                                                                color:var(--secondary)}
+                                                                                                                                                                                                @media(min-width:620px) {
+                                                                                                                                                                                                    .chord-grid {
+                                                                                                                                                                                                        grid-template-columns:1fr 1fr}
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                    @media(prefers-color-scheme:dark) {
+                                                                                                                                                                                                        :root {
+                                                                                                                                                                                                            --bg:#000;
+                                                                                                                                                                                                            --card:#1c1c1e;
+                                                                                                                                                                                                            --text:#f5f5f7;
+                                                                                                                                                                                                            --secondary:#a1a1a6;
+                                                                                                                                                                                                            --line:rgba(84, 84, 88, .62);
+                                                                                                                                                                                                            --accent:#0a84ff;
+                                                                                                                                                                                                            --accent-soft:rgba(10, 132, 255, .18);
+                                                                                                                                                                                                            --shadow:none}
+                                                                                                                                                                                                        }
