@@ -593,6 +593,24 @@ select {
     min-height: auto;
   }
 
+  .app-header,
+  .header-actions,
+  #backButton,
+  #degreeControl,
+  #printButton {
+    display: none !important;
+  }
+
+  .app-header {
+    position: static !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+  }
+
   .nav-card,
   .panel,
   .control-group,
@@ -637,7 +655,11 @@ select {
   }
 
   .print-header {
-    display: flex;
+    display: grid !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
     justify-content: space-between;
     gap: 12px;
     align-items: center;
@@ -648,6 +670,8 @@ select {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .selected-form-heading,
@@ -729,10 +753,38 @@ select {
   }
 
   .pattern-heading p {
+    display: none !important;
     font-size: 10px;
     color: #222222;
     white-space: normal;
     text-align: left;
+  }
+
+  .voicing-card h4 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .voicing-meta {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.3;
+    color: #222222;
+  }
+
+  .voicing-inversion,
+  .voicing-chord-number,
+  .voicing-separator {
+    display: none !important;
+  }
+
+  .voicing-fret {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #555555;
   }
 
   .pattern-grid {

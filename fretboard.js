@@ -50,12 +50,20 @@
     return normalized;
   }
 
-  function normalizeVoicing(voicing) {
+  function normalizeVoicing(voicing, options = {}) {
     const strings = Array.isArray(voicing.strings)
       ? voicing.strings.map(Number)
       : parseStringSet(voicing.stringSet);
     const rawFrets = Array.isArray(voicing.frets) ? voicing.frets : [];
-    const frets = shiftToLowestEquivalent(rawFrets);
+    const frets = options.preserveAbsolutePositions
+      ? rawFrets.map((fret) => {
+          if (fret === null || fret === undefined || String(fret).toLowerCase() === "x") {
+            return fret;
+          }
+          const numeric = Number(fret);
+          return Number.isFinite(numeric) ? numeric : fret;
+        })
+      : shiftToLowestEquivalent(rawFrets);
     const degrees = Array.isArray(voicing.degrees) ? voicing.degrees : [];
 
     if (strings.length !== frets.length) {
@@ -278,7 +286,7 @@
     const host = typeof target === "string" ? document.querySelector(target) : target;
     if (!host) throw new Error("Fretboard target was not found.");
 
-    const voicing = normalizeVoicing(rawVoicing);
+    const voicing = normalizeVoicing(rawVoicing, options);
     const size = options.size === "large" ? "large" : "small";
     const orientation = options.orientation === "vertical" ? "vertical" : "horizontal";
     const showDegrees = options.showDegrees !== false;
