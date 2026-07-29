@@ -331,7 +331,7 @@ select {
 
 .form-table {
   display: grid;
-  grid-template-columns: 82px repeat(4, minmax(112px, 1fr));
+  grid-template-columns: 82px repeat(var(--form-column-count, 4), minmax(112px, 1fr));
   min-width: 530px;
 }
 
@@ -710,7 +710,7 @@ select {
   }
 
   .form-table {
-    grid-template-columns: 84px repeat(4, minmax(118px, 1fr));
+    grid-template-columns: 84px repeat(var(--form-column-count, 4), minmax(118px, 1fr));
     min-width: 0;
   }
 

@@ -3,10 +3,15 @@
 
   const DATA = window.GVL_DATA;
   const Fretboard = window.GuitarFretboard;
+  const inversionPermutationCache = new Map();
+  const physicalCandidateCache = new WeakMap();
+  const candidateSignatureCache = new WeakMap();
+  const transitionCostCache = new WeakMap();
 
   const state = {
     page: "home",
-    library: "Standard",
+    family: "Drop2",
+    variant: "Standard",
     stringSet: "2-5",
     root: "C",
     orientation: "horizontal",
@@ -65,6 +70,67 @@
     return quality === "m7b5" ? "m7b5" : quality;
   }
 
+  function uniqueFormValues(forms, field) {
+    return [...new Set(forms.map((form) => form[field]).filter(Boolean))];
+  }
+
+  function availableFamilies() {
+    return uniqueFormValues(DATA.forms, "family");
+  }
+
+  function availableVariants(family = state.family) {
+    return uniqueFormValues(DATA.forms.filter((form) => form.family === family), "variant");
+  }
+
+  function availableStringSets(family = state.family, variant = state.variant) {
+    return uniqueFormValues(DATA.forms.filter((form) =>
+      form.family === family && form.variant === variant
+    ), "stringSet");
+  }
+
+  function currentForms() {
+    return DATA.forms.filter((form) =>
+      form.family === state.family &&
+      form.variant === state.variant &&
+      form.stringSet === state.stringSet
+    );
+  }
+
+  function availableQualities(forms = currentForms()) {
+    return uniqueFormValues(forms, "quality");
+  }
+
+  function availableInversions(forms = currentForms()) {
+    return uniqueFormValues(forms, "inversion");
+  }
+
+  function supportsChordChanges(family = state.family) {
+    return family === "Drop2" || family === "Drop3";
+  }
+
+  function normalizeSelectionState() {
+    const families = availableFamilies();
+    if (!families.includes(state.family)) state.family = families[0] ?? "";
+
+    const variants = availableVariants();
+    if (!variants.includes(state.variant)) state.variant = variants[0] ?? "";
+
+    const stringSets = availableStringSets();
+    if (!stringSets.includes(state.stringSet)) state.stringSet = stringSets[0] ?? "";
+
+    const forms = currentForms();
+    if (!forms.some((form) => form.id === state.selectedFormId)) {
+      state.selectedFormId = forms[0]?.id ?? "";
+    }
+
+    const qualities = availableQualities(forms);
+    if (qualities.length) {
+      state.chords.forEach((chord) => {
+        if (!qualities.includes(chord.quality)) chord.quality = qualities[0];
+      });
+    }
+  }
+
   function transposeForm(form, root) {
     const offset = DATA.rootOffsets[root] ?? 0;
     return {
@@ -81,12 +147,12 @@
     return form?.inversion ?? "Root";
   }
 
-  function getInversionCoverageDiagnostic(forms) {
+  function getInversionCoverageDiagnostic(forms, inversions = availableInversions(forms)) {
     const counts = {};
 
     forms.forEach((form) => {
       if (!counts[form.quality]) {
-        counts[form.quality] = { Root: 0, "1st": 0, "2nd": 0, "3rd": 0 };
+        counts[form.quality] = Object.fromEntries(inversions.map((inversion) => [inversion, 0]));
       }
 
       const slotInversion = getFormSlotInversion(form);
@@ -97,24 +163,27 @@
   }
 
   function logInversionCoverageDiagnostic(forms) {
-    const counts = getInversionCoverageDiagnostic(forms);
+    const inversions = availableInversions(forms);
+    const counts = getInversionCoverageDiagnostic(forms, inversions);
     const issues = Object.entries(counts).filter(([quality, slots]) =>
-      DATA.inversions.some((inversion) => (slots[inversion] ?? 0) !== 1)
+      inversions.some((inversion) => (slots[inversion] ?? 0) !== 1)
     );
     const summary = Object.entries(counts).map(([quality, slots]) =>
-      `${quality}: ${DATA.inversions.map((inversion) => `${inversion}=${slots[inversion] ?? 0}`).join(", ")}`
+      `${quality}: ${inversions.map((inversion) => `${inversion}=${slots[inversion] ?? 0}`).join(", ")}`
     ).join(" | ");
 
     if (issues.length) {
       console.warn("[GVL] inversion coverage issue", {
-        library: state.library,
+        family: state.family,
+        variant: state.variant,
         stringSet: state.stringSet,
         summary,
         counts
       });
     } else {
       console.info("[GVL] inversion coverage OK", {
-        library: state.library,
+        family: state.family,
+        variant: state.variant,
         stringSet: state.stringSet,
         summary,
         counts
@@ -195,7 +264,7 @@
       frets,
       quality: chord.quality,
       inversion: getFormSlotInversion(form),
-      inversionOrder: DATA.inversions.indexOf(getFormSlotInversion(form)),
+      inversionOrder: availableInversions().indexOf(getFormSlotInversion(form)),
       formId: form.id,
       octaveShift: 0
     });
@@ -214,16 +283,26 @@
   }
 
   function candidateSignature(candidate) {
-    return [
+    const cached = candidateSignatureCache.get(candidate);
+    if (cached) return cached;
+
+    const signature = [
       candidate.formId,
       candidate.inversion,
       candidate.octaveShift ?? 0,
       candidate.frets.map((fret) => String(fret)).join(",")
     ].join("|");
+
+    candidateSignatureCache.set(candidate, signature);
+    return signature;
   }
 
   function generatePhysicalCandidates(chord, form) {
     if (!form) return [];
+
+    let candidatesByRoot = physicalCandidateCache.get(form);
+    const cached = candidatesByRoot?.get(chord.root);
+    if (cached) return cached;
 
     const base = buildBaseCandidateForChord(chord, form);
     const candidates = [-12, 0, 12]
@@ -235,21 +314,29 @@
       unique.set(candidateSignature(candidate), candidate);
     });
 
-    return [...unique.values()].sort((left, right) => {
+    const sortedCandidates = [...unique.values()].sort((left, right) => {
       if (left.lowestFret !== right.lowestFret) return left.lowestFret - right.lowestFret;
       if (left.averageFret !== right.averageFret) return left.averageFret - right.averageFret;
       return candidateSignature(left).localeCompare(candidateSignature(right));
     });
+
+    if (!candidatesByRoot) {
+      candidatesByRoot = new Map();
+      physicalCandidateCache.set(form, candidatesByRoot);
+    }
+    candidatesByRoot.set(chord.root, sortedCandidates);
+    return sortedCandidates;
   }
 
-  function buildCandidateLookup(activeChords, forms) {
+  function buildCandidateLookup(activeChords, forms, inversions) {
     return activeChords.map((chord) => {
       const byInversion = {};
 
-      DATA.inversions.forEach((inversion) => {
+      inversions.forEach((inversion) => {
         const form = forms.find((item) =>
           item.quality === chord.quality &&
-          item.library === state.library &&
+          item.family === state.family &&
+          item.variant === state.variant &&
           item.stringSet === state.stringSet &&
           getFormSlotInversion(item) === inversion
         );
@@ -262,6 +349,9 @@
   }
 
   function calculateTransitionCost(previousCandidate, candidate) {
+    let cachedTransitions = transitionCostCache.get(previousCandidate);
+    if (cachedTransitions?.has(candidate)) return cachedTransitions.get(candidate);
+
     let totalMovement = 0;
     let maxJump = 0;
     let largeJumpCount = 0;
@@ -280,16 +370,27 @@
       if (movement >= 10) largeJumpCount += 1;
     });
 
-    return {
+    const transition = {
       totalMovement,
       maxJump,
       largeJumpCount,
       positionDrift: Math.abs(candidate.lowestFret - previousCandidate.lowestFret)
     };
+
+    if (!cachedTransitions) {
+      cachedTransitions = new WeakMap();
+      transitionCostCache.set(previousCandidate, cachedTransitions);
+    }
+    cachedTransitions.set(candidate, transition);
+    return transition;
   }
 
-  function generateInversionPermutations() {
-    const items = [...DATA.inversions];
+  function generateInversionPermutations(inversions) {
+    const cacheKey = inversions.join("|");
+    const cached = inversionPermutationCache.get(cacheKey);
+    if (cached) return cached;
+
+    const items = [...inversions];
     const permutations = [];
 
     function visit(prefix) {
@@ -308,6 +409,7 @@
     }
 
     visit([]);
+    inversionPermutationCache.set(cacheKey, permutations);
     return permutations;
   }
 
@@ -379,8 +481,7 @@
     return candidates.map(candidateSignature).join(";;");
   }
 
-  function createInitialStates(candidateLookup) {
-    const startingInversions = ["Root", "1st", "2nd", "3rd"];
+  function createInitialStates(candidateLookup, startingInversions) {
     const groups = startingInversions.map((inversion) => candidateLookup[0][inversion] ?? []);
     const states = [];
 
@@ -390,7 +491,7 @@
       const patterns = candidates.map((candidate, patternIndex) => ({
         patternIndex,
         startingInversion: startingInversions[patternIndex],
-        path: [cloneCandidate(candidate)]
+        path: [candidate]
       }));
 
       const score = {
@@ -408,10 +509,10 @@
     return states;
   }
 
-  function optimizePhysicalVoiceLeading(activeChords, candidateLookup) {
-    const permutations = generateInversionPermutations();
+  function optimizePhysicalVoiceLeading(activeChords, candidateLookup, inversions) {
+    const permutations = generateInversionPermutations(inversions);
     const BEAM_WIDTH = 320;
-    let states = createInitialStates(candidateLookup);
+    let states = createInitialStates(candidateLookup, inversions);
 
     for (let chordIndex = 1; chordIndex < activeChords.length; chordIndex += 1) {
       const bestByCurrentState = new Map();
@@ -431,21 +532,19 @@
             });
 
             const score = addTransitionToScore(previousState.score, transitions, currentCandidates);
-            const patterns = previousState.patterns.map((pattern, patternIndex) => ({
-              patternIndex: pattern.patternIndex,
-              startingInversion: pattern.startingInversion,
-              path: [...pattern.path.map((candidate) => cloneCandidate(candidate)), cloneCandidate(currentCandidates[patternIndex])]
-            }));
-
             const signature = currentStateSignature(currentCandidates);
             const stateKey = `${chordIndex}|${signature}`;
             const currentBest = bestByCurrentState.get(stateKey);
 
-            const nextState = { score, patterns, signature };
             if (!currentBest ||
                 comparePathScores(score, currentBest.score) < 0 ||
                 (comparePathScores(score, currentBest.score) === 0 && signature < currentBest.signature)) {
-              bestByCurrentState.set(stateKey, nextState);
+              const patterns = previousState.patterns.map((pattern, patternIndex) => ({
+                patternIndex: pattern.patternIndex,
+                startingInversion: pattern.startingInversion,
+                path: [...pattern.path, currentCandidates[patternIndex]]
+              }));
+              bestByCurrentState.set(stateKey, { score, patterns, signature });
             }
           });
         });
@@ -563,8 +662,8 @@
     return best ? best.patterns : patterns.map((pattern) => clonePattern(pattern));
   }
 
-  function buildFallbackPatterns(activeChords, candidateLookup) {
-    return DATA.inversions.map((inversion, patternIndex) => {
+  function buildFallbackPatterns(activeChords, candidateLookup, inversions) {
+    return inversions.map((inversion, patternIndex) => {
       const path = [];
       let previousCandidate = null;
 
@@ -597,11 +696,10 @@
     });
   }
 
-  function validateAndFinalizePatternPaths(patterns, activeChords) {
-    const expectedStarts = ["Root", "1st", "2nd", "3rd"];
+  function validateAndFinalizePatternPaths(patterns, activeChords, expectedStarts) {
     const ordered = [...patterns].sort((left, right) => left.patternIndex - right.patternIndex);
 
-    const validCount = ordered.length === 4;
+    const validCount = ordered.length === expectedStarts.length;
     const completePaths = ordered.every((pattern) =>
       pattern.path.length === activeChords.length &&
       pattern.path.every(Boolean)
@@ -613,7 +711,7 @@
     let validCoverage = true;
     for (let chordIndex = 0; chordIndex < activeChords.length; chordIndex += 1) {
       const inversions = ordered.map((pattern) => pattern.path[chordIndex]?.inversion);
-      if (DATA.inversions.some((inversion) => !inversions.includes(inversion))) {
+      if (expectedStarts.some((inversion) => !inversions.includes(inversion))) {
         validCoverage = false;
         break;
       }
@@ -675,18 +773,19 @@
   function buildAutomaticVoiceLedPatterns(activeChords, forms) {
     if (!activeChords.length) return [];
 
-    const candidateLookup = buildCandidateLookup(activeChords, forms);
-    const optimized = optimizePhysicalVoiceLeading(activeChords, candidateLookup);
+    const inversions = availableInversions(forms);
+    const candidateLookup = buildCandidateLookup(activeChords, forms, inversions);
+    const optimized = optimizePhysicalVoiceLeading(activeChords, candidateLookup, inversions);
 
     let patterns = optimized
       ? optimized.patterns.map((pattern) => clonePattern(pattern))
-      : buildFallbackPatterns(activeChords, candidateLookup);
+      : buildFallbackPatterns(activeChords, candidateLookup, inversions);
 
     patterns = selectBestRegisterDistribution(patterns);
-    patterns = validateAndFinalizePatternPaths(patterns, activeChords);
+    patterns = validateAndFinalizePatternPaths(patterns, activeChords, inversions);
 
-    if (patterns.length !== 4 || patterns.some((pattern) => pattern.path.some((candidate) => !candidate))) {
-      patterns = buildFallbackPatterns(activeChords, candidateLookup);
+    if (patterns.length !== inversions.length || patterns.some((pattern) => pattern.path.some((candidate) => !candidate))) {
+      patterns = buildFallbackPatterns(activeChords, candidateLookup, inversions);
     }
 
     logFinalPatternDiagnostic(patterns, activeChords);
@@ -742,7 +841,7 @@
 
     return `
       <div class="print-header" aria-hidden="true">
-        <div class="print-header-item">DROP2 ${escapeHtml(state.library.toUpperCase())}</div>
+        <div class="print-header-item">${escapeHtml(state.family)} ${escapeHtml(state.variant)}</div>
         <div class="print-header-item">${escapeHtml(headerLabel)} ${escapeHtml(headerValue)}</div>
         <div class="print-header-item">String Set: ${escapeHtml(state.stringSet)}</div>
       </div>
@@ -774,13 +873,18 @@
       <section class="panel">
         <div class="control-grid">
           <div class="control-group">
-            <label for="librarySelect">Library</label>
-            <select id="librarySelect">${options(DATA.libraries, state.library)}</select>
+            <label for="familySelect">Family</label>
+            <select id="familySelect">${options(availableFamilies(), state.family)}</select>
+          </div>
+
+          <div class="control-group">
+            <label for="variantSelect">Variant</label>
+            <select id="variantSelect">${options(availableVariants(), state.variant)}</select>
           </div>
 
           <div class="control-group">
             <label for="stringSetSelect">String Set</label>
-            <select id="stringSetSelect">${options(DATA.stringSets, state.stringSet)}</select>
+            <select id="stringSetSelect">${options(availableStringSets(), state.stringSet)}</select>
           </div>
 
           ${includeRoot ? `
@@ -802,14 +906,10 @@
     `;
   }
 
-  function currentForms() {
-    return DATA.forms.filter((form) =>
-      form.library === state.library && form.stringSet === state.stringSet
-    );
-  }
-
   function renderFormLibrary() {
     const forms = currentForms();
+    const inversions = availableInversions(forms);
+    const qualities = availableQualities(forms);
     logInversionCoverageDiagnostic(forms);
     const byKey = new Map(forms.map((form) => [`${form.quality}|${getFormSlotInversion(form)}`, form]));
     let selected = forms.find((form) => form.id === state.selectedFormId);
@@ -819,13 +919,13 @@
 
     const table = [
       `<div class="table-cell header">Quality</div>`,
-      ...DATA.inversions.map((inversion) => `<div class="table-cell header">${escapeHtml(inversion)}</div>`)
+      ...inversions.map((inversion) => `<div class="table-cell header">${escapeHtml(inversion)}</div>`)
     ];
 
-    DATA.qualities.forEach((quality) => {
+    qualities.forEach((quality) => {
       table.push(`<div class="table-cell row-label">${escapeHtml(displayQuality(quality))}</div>`);
 
-      DATA.inversions.forEach((inversion) => {
+      inversions.forEach((inversion) => {
         const form = byKey.get(`${quality}|${inversion}`);
 
         table.push(`
@@ -854,7 +954,7 @@
       </div>
 
       <section class="form-table-wrap">
-        <div class="form-table">${table.join("")}</div>
+        <div class="form-table" style="--form-column-count: ${inversions.length}">${table.join("")}</div>
       </section>
 
       <div class="section-heading selected-form-heading">
@@ -867,7 +967,7 @@
           <div class="selected-meta">
             <div>
               <h3>${escapeHtml(state.root)}${escapeHtml(displayQuality(selected.quality))}</h3>
-              <p>${escapeHtml(selected.inversion)} (Drop2)</p>
+              <p>${escapeHtml(selected.inversion)} (${escapeHtml(selected.family)})</p>
             </div>
             <p>${escapeHtml(selected.stringSet)}</p>
           </div>
@@ -875,8 +975,8 @@
           <div id="selectedFretboard" class="fretboard-host"></div>
 
           <div class="use-case">
-            <strong>Use Case</strong><br>
-            ${escapeHtml(selected.useCase)}
+            <strong>Notes</strong><br>
+            ${escapeHtml(selected.notes || "—")}
           </div>
         </section>
       ` : `<div class="empty-state">No matching forms yet.</div>`}
@@ -923,7 +1023,7 @@
         <div class="control-group">
           <label for="chordQuality${index}">Quality</label>
           <select id="chordQuality${index}" data-chord-index="${index}" data-chord-field="quality"${chord.root ? "" : " disabled"}>
-            ${options(DATA.qualities, chord.quality)}
+            ${options(availableQualities(), chord.quality)}
           </select>
         </div>
       </div>
@@ -932,6 +1032,15 @@
 
   function renderVoicingLibrary() {
     const forms = currentForms();
+    if (!supportsChordChanges()) {
+      app.innerHTML = `
+        ${printHeaderMarkup()}
+        ${commonControls({ includeRoot: false })}
+        <div class="empty-state panel">Chord Changes is currently available for Drop2 and Drop3 only.</div>
+      `;
+      return;
+    }
+
     logInversionCoverageDiagnostic(forms);
     const activeChords = state.chords
       .map((chord, index) => ({ ...chord, originalIndex: index }))
@@ -947,7 +1056,7 @@
 
       <div class="section-heading">
         <h2>Chord Changes</h2>
-        <p>${activeChords.length} ${activeChords.length === 1 ? "chord" : "chords"} x 4 patterns</p>
+        <p>${activeChords.length} ${activeChords.length === 1 ? "chord" : "chords"} x ${availableInversions(forms).length} patterns</p>
       </div>
 
       <section id="patternList" class="pattern-list"></section>
@@ -1036,8 +1145,13 @@
       button.addEventListener("click", () => setPage(button.dataset.go));
     });
 
-    document.querySelector("#librarySelect")?.addEventListener("change", (event) => {
-      state.library = event.target.value;
+    document.querySelector("#familySelect")?.addEventListener("change", (event) => {
+      state.family = event.target.value;
+      render();
+    });
+
+    document.querySelector("#variantSelect")?.addEventListener("change", (event) => {
+      state.variant = event.target.value;
       render();
     });
 
@@ -1076,6 +1190,7 @@
   }
 
   function render() {
+    normalizeSelectionState();
     updatePrintStyle();
     renderHeader();
 
