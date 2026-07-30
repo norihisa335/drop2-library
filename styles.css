@@ -263,7 +263,23 @@ h1 {
 }
 
 .browse-chord-orientation {
-  grid-column: 1 / -1;
+  grid-column: auto;
+}
+
+.browse-chord-print-layout {
+  grid-column: auto;
+}
+
+.browse-chord-controls .control-grid {
+  column-gap: 8px;
+  row-gap: 12px;
+}
+
+.browse-chord-controls .segmented button {
+  min-height: 34px;
+  padding: 0 5px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .browse-chord-grid {
