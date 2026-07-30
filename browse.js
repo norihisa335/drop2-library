@@ -230,6 +230,114 @@
     }
   }
 
+  function browseByChordForms() {
+    const forms = DATA.forms
+      .filter((form) => form.quality === state.browseByChordQuality)
+      .filter((form) => form.showInBrowseByChord === true)
+      .filter((form) => Number.isFinite(form.browseByChordOrder))
+      .sort((left, right) => left.browseByChordOrder - right.browseByChordOrder);
+
+    const seenOrders = new Set();
+    forms.forEach((form) => {
+      if (seenOrders.has(form.browseByChordOrder)) {
+        console.warn("[GVL] duplicate Browse by Chord order", {
+          quality: state.browseByChordQuality,
+          order: form.browseByChordOrder,
+          id: form.id
+        });
+      }
+      seenOrders.add(form.browseByChordOrder);
+    });
+
+    if (forms.length > 24) {
+      console.warn("[GVL] Browse by Chord is limited to 24 forms", {
+        quality: state.browseByChordQuality,
+        count: forms.length
+      });
+    }
+
+    return forms.slice(0, 24);
+  }
+
+  function browseByChordCardMarkup(form) {
+    const variant = form.variant === "Standard" ? "" : `<span>${escapeHtml(form.variant)}</span>`;
+    return `
+      <button class="browse-chord-card" data-browse-form-id="${escapeHtml(form.id)}" type="button"
+        aria-label="${escapeHtml(`${form.family} ${form.stringSet} ${form.inversion}`)}">
+        <span class="browse-chord-mini" data-browse-mini-form="${escapeHtml(form.id)}"></span>
+        <span class="browse-chord-meta">
+          <strong>${escapeHtml(form.family)}</strong>
+          <span>${escapeHtml(form.stringSet)}</span>
+          <span>${escapeHtml(form.inversion)}</span>
+          ${variant}
+        </span>
+      </button>
+    `;
+  }
+
+  function renderBrowseByChord({ printHeaderMarkup }) {
+    const forms = browseByChordForms();
+    const selected = forms.find((form) => form.id === state.selectedBrowseByChordFormId) ?? null;
+
+    app.innerHTML = `
+      ${printHeaderMarkup()}
+      <section class="panel browse-chord-controls">
+        <div class="control-grid">
+          <div class="control-group">
+            <label for="browseChordRootSelect">Root</label>
+            <select id="browseChordRootSelect">${options(DATA.roots, state.browseByChordRoot)}</select>
+          </div>
+          <div class="control-group">
+            <label for="browseChordQualitySelect">Quality</label>
+            <select id="browseChordQualitySelect">${options(["Maj7", "7", "m7", "m7b5"], state.browseByChordQuality)}</select>
+          </div>
+          <div class="control-group browse-chord-orientation">
+            <span class="control-label">View</span>
+            <div class="segmented" data-segment="orientation">
+              <button class="${state.orientation === "horizontal" ? "active" : ""}" data-value="horizontal" type="button">Horizontal</button>
+              <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">Vertical</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="browse-chord-grid ${state.orientation === "vertical" ? "is-vertical" : "is-horizontal"}">
+        ${forms.map(browseByChordCardMarkup).join("")}
+      </section>
+      ${selected ? `
+        <section class="browse-chord-modal" role="dialog" aria-modal="true" aria-label="Voicing details">
+          <div class="browse-chord-modal-card">
+            <button class="modal-close" data-close-browse-modal type="button" aria-label="Close">×</button>
+            <div class="selected-meta">
+              <div>
+                <h3>${escapeHtml(selected.family)}</h3>
+                <p>${escapeHtml(selected.stringSet)} · ${escapeHtml(selected.inversion)}${selected.variant === "Standard" ? "" : ` · ${escapeHtml(selected.variant)}`}</p>
+              </div>
+            </div>
+            <div id="browseChordSelectedFretboard" class="fretboard-host"></div>
+          </div>
+        </section>
+      ` : ""}
+    `;
+
+    document.querySelectorAll("[data-browse-mini-form]").forEach((host) => {
+      const form = forms.find((item) => item.id === host.dataset.browseMiniForm);
+      if (!form) return;
+      Fretboard.render(host, transposeForm(form, state.browseByChordRoot), {
+        size: "small",
+        orientation: state.orientation,
+        showDegrees: false
+      });
+    });
+
+    if (selected) {
+      Fretboard.render("#browseChordSelectedFretboard", transposeForm(selected, state.browseByChordRoot), {
+        size: "large",
+        orientation: state.orientation,
+        showDegrees: state.showDegrees
+      });
+    }
+  }
+
   window.GVL_BROWSE = {
     configure,
     availableFamilies,
@@ -241,6 +349,7 @@
     supportsChordChanges,
     normalizeSelectionState,
     logInversionCoverageDiagnostic,
-    renderFormLibrary
+    renderFormLibrary,
+    renderBrowseByChord
   };
 })();

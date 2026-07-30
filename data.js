@@ -1470,7 +1470,7 @@ window.GVL_DATA = {
       "frets": [
         2,
         3,
-        1,
+        3,
         3
       ],
       "degrees": [
@@ -6361,3 +6361,33 @@ window.GVL_DATA = {
     }
   ]
 };
+
+// Browse by Chord configuration. All forms receive explicit defaults so that
+// entries without a configured order remain safely excluded from the view.
+// Add future selections here by assigning a form ID an order from 17 to 24.
+(() => {
+  const browseByChordOrders = {
+    "M7-14-1-S-01": 1, "M7-14-2-S-01": 2, "M7-14-3-S-01": 3, "M7-14-R-S-01": 4,
+    "M7-25-1-S-01": 5, "M7-25-2-S-01": 6, "M7-25-3-S-01": 7, "M7-25-R-S-01": 8,
+    "D3-M7-15-1-S-01": 9, "D3-M7-15-2-S-01": 10, "D3-M7-15-3-S-01": 11, "D3-M7-15-R-S-01": 12,
+    "D3-M7-26-1-S-01": 13, "D3-M7-26-2-S-01": 14, "D3-M7-26-3-S-01": 15, "D3-M7-26-R-S-01": 16,
+    "7-14-1-S-01": 1, "7-14-2-S-01": 2, "7-14-3-S-01": 3, "7-14-R-S-01": 4,
+    "7-25-1-S-01": 5, "7-25-2-S-01": 6, "7-25-3-S-01": 7, "7-25-R-S-01": 8,
+    "D3-7-15-1-S-01": 9, "D3-7-15-2-S-01": 10, "D3-7-15-3-S-01": 11, "D3-7-15-R-S-01": 12,
+    "D3-7-26-1-S-01": 13, "D3-7-26-2-S-01": 14, "D3-7-26-3-S-01": 15, "D3-7-26-R-S-01": 16,
+    "m7-14-1-S-01": 1, "m7-14-2-S-01": 2, "m7-14-3-S-01": 3, "m7-14-R-S-01": 4,
+    "m7-25-1-S-01": 5, "m7-25-2-S-01": 6, "m7-25-3-S-01": 7, "m7-25-R-S-01": 8,
+    "D3-m7-15-1-S-01": 9, "D3-m7-15-2-S-01": 10, "D3-m7-15-3-S-01": 11, "D3-m7-15-R-S-01": 12,
+    "D3-m7-26-1-S-01": 13, "D3-m7-26-2-S-01": 14, "D3-m7-26-3-S-01": 15, "D3-m7-26-R-S-01": 16,
+    "m7b5-14-1-S-01": 1, "m7b5-14-2-S-01": 2, "m7b5-14-3-S-01": 3, "m7b5-14-R-S-01": 4,
+    "m7b5-25-1-S-01": 5, "m7b5-25-2-S-01": 6, "m7b5-25-3-S-01": 7, "m7b5-25-R-S-01": 8,
+    "D3-m7b5-15-1-S-01": 9, "D3-m7b5-15-2-S-01": 10, "D3-m7b5-15-3-S-01": 11, "D3-m7b5-15-R-S-01": 12,
+    "D3-m7b5-26-1-S-01": 13, "D3-m7b5-26-2-S-01": 14, "D3-m7b5-26-3-S-01": 15, "D3-m7b5-26-R-S-01": 16
+  };
+
+  window.GVL_DATA.forms.forEach((form) => {
+    const order = browseByChordOrders[form.id];
+    form.showInBrowseByChord = Number.isInteger(order);
+    form.browseByChordOrder = Number.isInteger(order) ? order : null;
+  });
+})();

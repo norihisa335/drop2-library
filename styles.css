@@ -258,6 +258,97 @@ h1 {
   color: var(--secondary);
 }
 
+.browse-chord-controls .control-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.browse-chord-orientation {
+  grid-column: 1 / -1;
+}
+
+.browse-chord-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.browse-chord-grid.is-vertical {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.browse-chord-grid.is-horizontal {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.browse-chord-card {
+  min-width: 0;
+  padding: 8px 5px 7px;
+  border: 1px solid var(--separator);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.browse-chord-card:active { opacity: .72; }
+
+.browse-chord-mini,
+.browse-chord-mini .fretboard-svg {
+  display: block;
+  width: 100%;
+}
+
+.browse-chord-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px 5px;
+  margin-top: 4px;
+  color: var(--secondary);
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.browse-chord-meta strong {
+  width: 100%;
+  color: var(--text);
+  font-size: 10px;
+}
+
+.browse-chord-modal {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, .38);
+}
+
+.browse-chord-modal-card {
+  position: relative;
+  width: min(620px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .panel {
   margin-bottom: 16px;
   padding: 16px;
@@ -656,6 +747,52 @@ select {
 
   .app-main {
     padding: 0;
+  }
+
+  .browse-chord-modal {
+    display: none !important;
+  }
+
+  .browse-chord-grid {
+    display: grid;
+    gap: 4px;
+  }
+
+  .browse-chord-grid.is-vertical {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .browse-chord-grid.is-horizontal {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .browse-chord-card {
+    min-width: 0;
+    padding: 3px;
+    border: 1px solid #c7c7c7;
+    border-radius: 0;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .browse-chord-meta {
+    gap: 0 3px;
+    margin-top: 1px;
+    font-size: 7px;
+    color: #333333;
+  }
+
+  .browse-chord-meta strong {
+    font-size: 8px;
+    color: #000000;
+  }
+
+  .browse-chord-print-title {
+    display: block !important;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .home-grid,

@@ -13,6 +13,9 @@
     variant: "Standard",
     stringSet: "2-5",
     root: "C",
+    browseByChordRoot: "C",
+    browseByChordQuality: "Maj7",
+    selectedBrowseByChordFormId: "",
     orientation: "horizontal",
     showDegrees: localStorage.getItem("gvl-show-degrees") !== "false",
     selectedFormId: "M7-25-R-S-01",
@@ -102,7 +105,7 @@
       "browse-by-chord": "Browse by Chord",
       "changes-play": "Chord Changes (Play)"
     };
-    const hasViewControls = state.page === "forms" || state.page === "voicings";
+    const hasViewControls = state.page === "forms" || state.page === "voicings" || state.page === "browse-by-chord";
 
     pageTitle.textContent = pageTitles[state.page] ?? "Home";
     backButton.classList.toggle("hidden", isHome);
@@ -220,6 +223,16 @@
       state.root = event.target.value;
       render();
     });
+    document.querySelector("#browseChordRootSelect")?.addEventListener("change", (event) => {
+      state.browseByChordRoot = event.target.value;
+      state.selectedBrowseByChordFormId = "";
+      render();
+    });
+    document.querySelector("#browseChordQualitySelect")?.addEventListener("change", (event) => {
+      state.browseByChordQuality = event.target.value;
+      state.selectedBrowseByChordFormId = "";
+      render();
+    });
     document.querySelectorAll("[data-segment='orientation'] button").forEach((button) => {
       button.addEventListener("click", () => {
         state.orientation = button.dataset.value;
@@ -231,6 +244,16 @@
         state.selectedFormId = button.dataset.formId;
         render();
       });
+    });
+    document.querySelectorAll("[data-browse-form-id]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selectedBrowseByChordFormId = button.dataset.browseFormId;
+        render();
+      });
+    });
+    document.querySelector("[data-close-browse-modal]")?.addEventListener("click", () => {
+      state.selectedBrowseByChordFormId = "";
+      render();
     });
     document.querySelectorAll("[data-chord-index]").forEach((select) => {
       select.addEventListener("change", () => {
@@ -251,11 +274,10 @@
       printHeaderMarkup: Print.printHeaderMarkup,
       commonControls
     });
-    if (state.page === "voicings") Changes.renderVoicingLibrary();
-    if (state.page === "browse-by-chord") renderGuidePage({
-      title: "Browse by Chord",
-      description: "Select a root and chord quality to explore matching voicings."
+    if (state.page === "browse-by-chord") Browse.renderBrowseByChord({
+      printHeaderMarkup: Print.printHeaderMarkup
     });
+    if (state.page === "voicings") Changes.renderVoicingLibrary();
     if (state.page === "changes-play") renderGuidePage({
       title: "Chord Changes (Play)",
       description: "Develop voice-leading around a chosen top-note direction."
