@@ -95,32 +95,56 @@
 
   function renderHeader() {
     const isHome = state.page === "home";
-    pageTitle.textContent = isHome
-      ? "Home"
-      : state.page === "forms"
-        ? "Form Library"
-        : "Voicing Library";
+    const pageTitles = {
+      home: "Home",
+      forms: "Form Library",
+      voicings: "Voicing Library",
+      "browse-by-chord": "Browse by Chord",
+      "changes-play": "Chord Changes (Play)"
+    };
+    const hasViewControls = state.page === "forms" || state.page === "voicings";
+
+    pageTitle.textContent = pageTitles[state.page] ?? "Home";
     backButton.classList.toggle("hidden", isHome);
-    degreeControl.classList.toggle("hidden", isHome);
-    printButton.classList.toggle("hidden", isHome);
+    degreeControl.classList.toggle("hidden", !hasViewControls);
+    printButton.classList.toggle("hidden", !hasViewControls);
   }
 
   function renderHome() {
     app.innerHTML = `
       <section class="home-grid">
         <button class="nav-card" data-go="forms" type="button">
-          <span class="card-kicker">FORMS</span>
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Form Library</h2>
-          <p>Browse voicing forms</p>
+          <h2>Browse by Voicing</h2>
+          <p>Explore forms by family, variant, and string set.</p>
+        </button>
+
+        <button class="nav-card" data-go="browse-by-chord" type="button">
+          <span class="arrow" aria-hidden="true">&rsaquo;</span>
+          <h2>Browse by Chord</h2>
+          <p>Find voicings from a root and chord quality.</p>
         </button>
 
         <button class="nav-card" data-go="voicings" type="button">
-          <span class="card-kicker">PROGRESSIONS</span>
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Voicing Library</h2>
-          <p>Explore chord progressions</p>
+          <h2>Chord Changes (Study)</h2>
+          <p>Examine optimized voice-leading through changes.</p>
         </button>
+
+        <button class="nav-card" data-go="changes-play" type="button">
+          <span class="arrow" aria-hidden="true">&rsaquo;</span>
+          <h2>Chord Changes (Play)</h2>
+          <p>Shape voice-leading with a top-note focus.</p>
+        </button>
+      </section>
+    `;
+  }
+
+  function renderGuidePage({ title, description }) {
+    app.innerHTML = `
+      <section class="guide-page panel">
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(description)}</p>
       </section>
     `;
   }
@@ -228,6 +252,14 @@
       commonControls
     });
     if (state.page === "voicings") Changes.renderVoicingLibrary();
+    if (state.page === "browse-by-chord") renderGuidePage({
+      title: "Browse by Chord",
+      description: "Select a root and chord quality to explore matching voicings."
+    });
+    if (state.page === "changes-play") renderGuidePage({
+      title: "Chord Changes (Play)",
+      description: "Develop voice-leading around a chosen top-note direction."
+    });
     bindEvents();
   }
 
