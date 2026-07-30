@@ -333,7 +333,7 @@
         size: "small",
         compact: true,
         orientation: state.orientation,
-        showDegrees: false
+        showDegrees: state.showDegrees
       });
     });
 

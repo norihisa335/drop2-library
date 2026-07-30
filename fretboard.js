@@ -179,18 +179,24 @@
       if (x < left - 28 || x > left + boardWidth + 2) return;
 
       const degree = String(voicing.degrees[index] ?? "");
+      const directDegreeText = layout.compact && showDegrees;
       const radius = size === "large" ? 14 : 9.5;
       const fill = degree === "R" ? colors.root : colors.note;
 
-      svg.appendChild(svgElement("circle", { cx: x, cy: y, r: radius, fill }));
+      if (!directDegreeText) {
+        svg.appendChild(svgElement("circle", { cx: x, cy: y, r: radius, fill }));
+      }
 
       if (showDegrees && degree) {
         svg.appendChild(svgElement("text", {
           x,
           y: y + 0.5,
-          fill: "#ffffff",
-          "font-size": size === "large" ? 11 : 7.5,
+          fill: directDegreeText ? fill : "#ffffff",
+          "font-size": directDegreeText ? (degree.length > 1 ? 11 : 13) : (size === "large" ? 11 : 7.5),
           "font-weight": 800,
+          "paint-order": directDegreeText ? "stroke" : "normal",
+          stroke: directDegreeText ? "#ffffff" : "none",
+          "stroke-width": directDegreeText ? 1.6 : 0,
           "text-anchor": "middle",
           "dominant-baseline": "middle"
         }, degree));
@@ -263,18 +269,24 @@
       if (y < top - 28 || y > top + boardHeight + 2) return;
 
       const degree = String(voicing.degrees[index] ?? "");
+      const directDegreeText = layout.compact && showDegrees;
       const radius = size === "large" ? 14 : 9.5;
       const fill = degree === "R" ? colors.root : colors.note;
 
-      svg.appendChild(svgElement("circle", { cx: x, cy: y, r: radius, fill }));
+      if (!directDegreeText) {
+        svg.appendChild(svgElement("circle", { cx: x, cy: y, r: radius, fill }));
+      }
 
       if (showDegrees && degree) {
         svg.appendChild(svgElement("text", {
           x,
           y: y + 0.5,
-          fill: "#ffffff",
-          "font-size": size === "large" ? 11 : 7.5,
+          fill: directDegreeText ? fill : "#ffffff",
+          "font-size": directDegreeText ? (degree.length > 1 ? 11 : 13) : (size === "large" ? 11 : 7.5),
           "font-weight": 800,
+          "paint-order": directDegreeText ? "stroke" : "normal",
+          stroke: directDegreeText ? "#ffffff" : "none",
+          "stroke-width": directDegreeText ? 1.6 : 0,
           "text-anchor": "middle",
           "dominant-baseline": "middle"
         }, degree));
@@ -339,7 +351,8 @@
     }
 
     const layout = {
-      left, top, boardWidth, boardHeight, fretCount, startFret, size, showDegrees
+      left, top, boardWidth, boardHeight, fretCount, startFret, size, showDegrees,
+      compact: options.compact === true
     };
 
     if (orientation === "vertical") {
