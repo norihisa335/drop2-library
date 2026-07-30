@@ -1,4 +1,4 @@
-/* Generated from Guitar_Voicing_Library_Master_v4.xlsx: Voicing Master. */
+/* Generated from Guitar_Voicing_Library_Master_v5.xlsx: Voicing Master. */
 window.GVL_DATA = {
   "roots": [
     "C",
@@ -54,7 +54,9 @@ window.GVL_DATA = {
         "7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 1
     },
     {
       "id": "M7-25-1-S-01",
@@ -81,7 +83,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 2
     },
     {
       "id": "M7-25-2-S-01",
@@ -108,7 +112,9 @@ window.GVL_DATA = {
         "3",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 3
     },
     {
       "id": "M7-25-3-S-01",
@@ -135,7 +141,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 4
     },
     {
       "id": "7-25-R-S-01",
@@ -162,7 +170,9 @@ window.GVL_DATA = {
         "b7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 1
     },
     {
       "id": "7-25-1-S-01",
@@ -189,7 +199,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 2
     },
     {
       "id": "7-25-2-S-01",
@@ -216,7 +228,9 @@ window.GVL_DATA = {
         "3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 3
     },
     {
       "id": "7-25-3-S-01",
@@ -243,7 +257,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 4
     },
     {
       "id": "m7-25-R-S-01",
@@ -270,7 +286,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 1
     },
     {
       "id": "m7-25-1-S-01",
@@ -297,7 +315,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 2
     },
     {
       "id": "m7-25-2-S-01",
@@ -324,7 +344,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 3
     },
     {
       "id": "m7-25-3-S-01",
@@ -351,7 +373,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 4
     },
     {
       "id": "m7b5-25-R-S-01",
@@ -378,7 +402,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 1
     },
     {
       "id": "m7b5-25-1-S-01",
@@ -405,7 +431,9 @@ window.GVL_DATA = {
         "R",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 2
     },
     {
       "id": "m7b5-25-2-S-01",
@@ -432,7 +460,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 3
     },
     {
       "id": "m7b5-25-3-S-01",
@@ -459,7 +489,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 4
     },
     {
       "id": "M7-14-R-S-01",
@@ -486,7 +518,9 @@ window.GVL_DATA = {
         "7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 5
     },
     {
       "id": "M7-14-1-S-01",
@@ -513,7 +547,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 6
     },
     {
       "id": "M7-14-2-S-01",
@@ -540,7 +576,9 @@ window.GVL_DATA = {
         "3",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 7
     },
     {
       "id": "M7-14-3-S-01",
@@ -567,7 +605,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 8
     },
     {
       "id": "7-14-R-S-01",
@@ -594,7 +634,9 @@ window.GVL_DATA = {
         "b7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 5
     },
     {
       "id": "7-14-1-S-01",
@@ -621,7 +663,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 6
     },
     {
       "id": "7-14-2-S-01",
@@ -648,7 +692,9 @@ window.GVL_DATA = {
         "3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 7
     },
     {
       "id": "7-14-3-S-01",
@@ -675,7 +721,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 8
     },
     {
       "id": "m7-14-R-S-01",
@@ -702,7 +750,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 5
     },
     {
       "id": "m7-14-1-S-01",
@@ -729,7 +779,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 6
     },
     {
       "id": "m7-14-2-S-01",
@@ -756,7 +808,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 7
     },
     {
       "id": "m7-14-3-S-01",
@@ -783,7 +837,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 8
     },
     {
       "id": "m7b5-14-R-S-01",
@@ -810,7 +866,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 5
     },
     {
       "id": "m7b5-14-1-S-01",
@@ -837,7 +895,9 @@ window.GVL_DATA = {
         "R",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 6
     },
     {
       "id": "m7b5-14-2-S-01",
@@ -864,7 +924,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 7
     },
     {
       "id": "m7b5-14-3-S-01",
@@ -891,7 +953,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 8
     },
     {
       "id": "M7-25-R-P-01",
@@ -918,7 +982,9 @@ window.GVL_DATA = {
         "7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-25-1-P-01",
@@ -945,7 +1011,9 @@ window.GVL_DATA = {
         "9",
         "5"
       ],
-      "notes": "R → 9"
+      "notes": "R → 9",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-25-2-P-01",
@@ -969,7 +1037,9 @@ window.GVL_DATA = {
         "3",
         "7"
       ],
-      "notes": "Omit R"
+      "notes": "Omit R",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-25-3-P-01",
@@ -996,7 +1066,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": "7 → R"
+      "notes": "7 → R",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "7-25-R-P-01",
@@ -1023,7 +1095,9 @@ window.GVL_DATA = {
         "b7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "7-25-1-P-01",
@@ -1050,7 +1124,9 @@ window.GVL_DATA = {
         "9",
         "5"
       ],
-      "notes": "R → 9"
+      "notes": "R → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 17
     },
     {
       "id": "7-25-2-P-01",
@@ -1077,7 +1153,9 @@ window.GVL_DATA = {
         "3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "7-25-3-P-01",
@@ -1104,7 +1182,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7-25-R-P-01",
@@ -1131,7 +1211,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7-25-1-P-01",
@@ -1158,7 +1240,9 @@ window.GVL_DATA = {
         "9",
         "5"
       ],
-      "notes": "R → 9"
+      "notes": "R → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 17
     },
     {
       "id": "m7-25-2-P-01",
@@ -1182,7 +1266,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": "Omit R"
+      "notes": "Omit R",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 18
     },
     {
       "id": "m7-25-3-P-01",
@@ -1209,7 +1295,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-25-R-P-01",
@@ -1236,7 +1324,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-25-1-P-01",
@@ -1263,7 +1353,9 @@ window.GVL_DATA = {
         "R",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-25-2-P-01",
@@ -1290,7 +1382,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-25-3-P-01",
@@ -1317,7 +1411,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-14-R-P-01",
@@ -1344,7 +1440,9 @@ window.GVL_DATA = {
         "7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-14-1-P-01",
@@ -1371,7 +1469,9 @@ window.GVL_DATA = {
         "9",
         "5"
       ],
-      "notes": "7 → 6 / R → 9"
+      "notes": "7 → 6 / R → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 19
     },
     {
       "id": "M7-14-2-P-01",
@@ -1398,7 +1498,9 @@ window.GVL_DATA = {
         "3",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "M7-14-3-P-01",
@@ -1425,7 +1527,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": "7 → 6 / 3 → 9"
+      "notes": "7 → 6 / 3 → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 20
     },
     {
       "id": "7-14-R-P-01",
@@ -1452,7 +1556,9 @@ window.GVL_DATA = {
         "b7",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "7-14-1-P-01",
@@ -1479,7 +1585,9 @@ window.GVL_DATA = {
         "9",
         "5"
       ],
-      "notes": "R → 9"
+      "notes": "R → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 18
     },
     {
       "id": "7-14-2-P-01",
@@ -1506,7 +1614,9 @@ window.GVL_DATA = {
         "3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "7-14-3-P-01",
@@ -1533,7 +1643,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7-14-R-P-01",
@@ -1560,7 +1672,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": "5 → 11"
+      "notes": "5 → 11",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 19
     },
     {
       "id": "m7-14-1-P-01",
@@ -1578,7 +1692,7 @@ window.GVL_DATA = {
       "frets": [
         1,
         3,
-        1,
+        3,
         3
       ],
       "degrees": [
@@ -1587,7 +1701,9 @@ window.GVL_DATA = {
         "R",
         "5"
       ],
-      "notes": ""
+      "notes": "R → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 20
     },
     {
       "id": "m7-14-2-P-01",
@@ -1614,7 +1730,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7-14-3-P-01",
@@ -1641,7 +1759,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-14-R-P-01",
@@ -1668,7 +1788,9 @@ window.GVL_DATA = {
         "b7",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-14-1-P-01",
@@ -1695,7 +1817,9 @@ window.GVL_DATA = {
         "R",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-14-2-P-01",
@@ -1722,7 +1846,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "m7b5-14-3-P-01",
@@ -1749,7 +1875,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-15-R-S-01",
@@ -1776,7 +1904,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 9
     },
     {
       "id": "D3-M7-15-1-S-01",
@@ -1803,7 +1933,9 @@ window.GVL_DATA = {
         "5",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 10
     },
     {
       "id": "D3-M7-15-2-S-01",
@@ -1830,7 +1962,9 @@ window.GVL_DATA = {
         "7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 11
     },
     {
       "id": "D3-M7-15-3-S-01",
@@ -1857,7 +1991,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 12
     },
     {
       "id": "D3-7-15-R-S-01",
@@ -1884,7 +2020,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 9
     },
     {
       "id": "D3-7-15-1-S-01",
@@ -1911,7 +2049,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 10
     },
     {
       "id": "D3-7-15-2-S-01",
@@ -1938,7 +2078,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 11
     },
     {
       "id": "D3-7-15-3-S-01",
@@ -1965,7 +2107,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 12
     },
     {
       "id": "D3-m7-15-R-S-01",
@@ -1992,7 +2136,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 9
     },
     {
       "id": "D3-m7-15-1-S-01",
@@ -2019,7 +2165,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 10
     },
     {
       "id": "D3-m7-15-2-S-01",
@@ -2046,7 +2194,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 11
     },
     {
       "id": "D3-m7-15-3-S-01",
@@ -2073,7 +2223,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 12
     },
     {
       "id": "D3-m7b5-15-R-S-01",
@@ -2100,7 +2252,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 9
     },
     {
       "id": "D3-m7b5-15-1-S-01",
@@ -2127,7 +2281,9 @@ window.GVL_DATA = {
         "b5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 10
     },
     {
       "id": "D3-m7b5-15-2-S-01",
@@ -2154,7 +2310,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 11
     },
     {
       "id": "D3-m7b5-15-3-S-01",
@@ -2181,7 +2339,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 12
     },
     {
       "id": "D3-M7-26-R-S-01",
@@ -2208,7 +2368,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 13
     },
     {
       "id": "D3-M7-26-1-S-01",
@@ -2235,7 +2397,9 @@ window.GVL_DATA = {
         "5",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 14
     },
     {
       "id": "D3-M7-26-2-S-01",
@@ -2262,7 +2426,9 @@ window.GVL_DATA = {
         "7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 15
     },
     {
       "id": "D3-M7-26-3-S-01",
@@ -2289,7 +2455,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 16
     },
     {
       "id": "D3-7-26-R-S-01",
@@ -2316,7 +2484,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 13
     },
     {
       "id": "D3-7-26-1-S-01",
@@ -2343,7 +2513,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 14
     },
     {
       "id": "D3-7-26-2-S-01",
@@ -2370,7 +2542,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 15
     },
     {
       "id": "D3-7-26-3-S-01",
@@ -2397,7 +2571,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 16
     },
     {
       "id": "D3-m7-26-R-S-01",
@@ -2424,7 +2600,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 13
     },
     {
       "id": "D3-m7-26-1-S-01",
@@ -2451,7 +2629,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 14
     },
     {
       "id": "D3-m7-26-2-S-01",
@@ -2478,7 +2658,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 15
     },
     {
       "id": "D3-m7-26-3-S-01",
@@ -2505,7 +2687,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 16
     },
     {
       "id": "D3-m7b5-26-R-S-01",
@@ -2532,7 +2716,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 13
     },
     {
       "id": "D3-m7b5-26-1-S-01",
@@ -2559,7 +2745,9 @@ window.GVL_DATA = {
         "b5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 14
     },
     {
       "id": "D3-m7b5-26-2-S-01",
@@ -2586,7 +2774,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 15
     },
     {
       "id": "D3-m7b5-26-3-S-01",
@@ -2613,7 +2803,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 16
     },
     {
       "id": "D3-M7-15-R-P-01",
@@ -2630,17 +2822,19 @@ window.GVL_DATA = {
       ],
       "frets": [
         3,
-        4,
-        5,
+        2,
+        3,
         3
       ],
       "degrees": [
         "R",
-        "7",
-        "3",
+        "6",
+        "9",
         "5"
       ],
-      "notes": ""
+      "notes": "7 → 6 / 3 → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 17
     },
     {
       "id": "D3-M7-15-1-P-01",
@@ -2657,17 +2851,19 @@ window.GVL_DATA = {
       ],
       "frets": [
         7,
-        5,
+        7,
         8,
         7
       ],
       "degrees": [
         "3",
-        "R",
+        "9",
         "5",
         "7"
       ],
-      "notes": ""
+      "notes": "R → 9",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-15-2-P-01",
@@ -2685,16 +2881,18 @@ window.GVL_DATA = {
       "frets": [
         10,
         9,
-        12,
+        10,
         8
       ],
       "degrees": [
         "5",
         "3",
-        "7",
+        "6",
         "R"
       ],
-      "notes": ""
+      "notes": "7 → 6",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-15-3-P-01",
@@ -2712,16 +2910,18 @@ window.GVL_DATA = {
       "frets": [
         14,
         12,
-        13,
+        15,
         12
       ],
       "degrees": [
         "7",
         "5",
-        "R",
+        "9",
         "3"
       ],
-      "notes": ""
+      "notes": "R → 9",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-15-R-P-01",
@@ -2748,7 +2948,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-15-1-P-01",
@@ -2765,17 +2967,19 @@ window.GVL_DATA = {
       ],
       "frets": [
         7,
-        5,
+        7,
         8,
         6
       ],
       "degrees": [
         "3",
-        "R",
+        "9",
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "R → 9",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-15-2-P-01",
@@ -2802,7 +3006,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-15-3-P-01",
@@ -2829,7 +3035,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-15-R-P-01",
@@ -2856,7 +3064,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-15-1-P-01",
@@ -2874,16 +3084,18 @@ window.GVL_DATA = {
       "frets": [
         6,
         5,
-        8,
+        6,
         6
       ],
       "degrees": [
         "b3",
         "R",
-        "5",
+        "11",
         "b7"
       ],
-      "notes": ""
+      "notes": "5 → 11",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-15-2-P-01",
@@ -2910,7 +3122,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-15-3-P-01",
@@ -2937,7 +3151,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-15-R-P-01",
@@ -2964,7 +3180,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-15-1-P-01",
@@ -2991,7 +3209,9 @@ window.GVL_DATA = {
         "b5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-15-2-P-01",
@@ -3018,7 +3238,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-15-3-P-01",
@@ -3045,7 +3267,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-26-R-P-01",
@@ -3062,17 +3286,19 @@ window.GVL_DATA = {
       ],
       "frets": [
         8,
-        9,
-        9,
+        7,
+        7,
         8
       ],
       "degrees": [
         "R",
-        "7",
-        "3",
+        "6",
+        "9",
         "5"
       ],
-      "notes": ""
+      "notes": "7 → 6 / 3 → 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 18
     },
     {
       "id": "D3-M7-26-1-P-01",
@@ -3099,7 +3325,9 @@ window.GVL_DATA = {
         "5",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-26-2-P-01",
@@ -3126,7 +3354,9 @@ window.GVL_DATA = {
         "7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-M7-26-3-P-01",
@@ -3153,7 +3383,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-26-R-P-01",
@@ -3180,7 +3412,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-26-1-P-01",
@@ -3207,7 +3441,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-26-2-P-01",
@@ -3234,7 +3470,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-7-26-3-P-01",
@@ -3261,7 +3499,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-26-R-P-01",
@@ -3288,7 +3528,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-26-1-P-01",
@@ -3315,7 +3557,9 @@ window.GVL_DATA = {
         "5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-26-2-P-01",
@@ -3342,7 +3586,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7-26-3-P-01",
@@ -3369,7 +3615,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-26-R-P-01",
@@ -3396,7 +3644,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-26-1-P-01",
@@ -3423,7 +3673,9 @@ window.GVL_DATA = {
         "b5",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-26-2-P-01",
@@ -3450,7 +3702,9 @@ window.GVL_DATA = {
         "b7",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "D3-m7b5-26-3-P-01",
@@ -3477,7 +3731,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "SH-M7-643-R-S-01",
@@ -3493,15 +3749,17 @@ window.GVL_DATA = {
       ],
       "frets": [
         8,
-        2,
-        4
+        9,
+        9
       ],
       "degrees": [
         "R",
-        "3",
-        "7"
+        "7",
+        "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 22
     },
     {
       "id": "SH-M7-643-R-P-01",
@@ -3513,115 +3771,24 @@ window.GVL_DATA = {
       "strings": [
         6,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         8,
-        2,
-        4
-      ],
-      "degrees": [
-        "R",
-        "3",
-        "7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-M7-643-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "Maj7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        12,
         9,
-        5
-      ],
-      "degrees": [
-        "3",
-        "7",
-        "R"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-M7-643-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "Maj7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        12,
         9,
-        5
+        7
       ],
       "degrees": [
+        "R",
+        "7",
         "3",
-        "7",
-        "R"
+        "#11"
       ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-M7-643-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "Maj7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        7,
-        10,
-        9
-      ],
-      "degrees": [
-        "7",
-        "R",
-        "3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-M7-643-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "Maj7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        7,
-        10,
-        9
-      ],
-      "degrees": [
-        "7",
-        "R",
-        "3"
-      ],
-      "notes": "Add tension"
+      "notes": "Add tension #11",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "SH-M7-543-R-S-01",
@@ -3645,7 +3812,9 @@ window.GVL_DATA = {
         "3",
         "7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 23
     },
     {
       "id": "SH-M7-543-R-P-01",
@@ -3657,115 +3826,24 @@ window.GVL_DATA = {
       "strings": [
         5,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         3,
         2,
-        4
+        4,
+        3
       ],
       "degrees": [
         "R",
         "3",
-        "7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-M7-543-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "Maj7",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        7,
-        9,
-        5
-      ],
-      "degrees": [
-        "3",
         "7",
-        "R"
+        "9"
       ],
-      "notes": ""
-    },
-    {
-      "id": "SH-M7-543-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "Maj7",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        7,
-        9,
-        5
-      ],
-      "degrees": [
-        "3",
-        "7",
-        "R"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-M7-543-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "Maj7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        2,
-        10,
-        9
-      ],
-      "degrees": [
-        "7",
-        "R",
-        "3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-M7-543-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "Maj7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        2,
-        10,
-        9
-      ],
-      "degrees": [
-        "7",
-        "R",
-        "3"
-      ],
-      "notes": "Add tension"
+      "notes": "Add tension 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 24
     },
     {
       "id": "SH-7-643-R-S-01",
@@ -3781,15 +3859,17 @@ window.GVL_DATA = {
       ],
       "frets": [
         8,
-        2,
-        3
+        8,
+        9
       ],
       "degrees": [
         "R",
-        "3",
-        "b7"
+        "b7",
+        "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 19
     },
     {
       "id": "SH-7-643-R-P-01",
@@ -3801,115 +3881,24 @@ window.GVL_DATA = {
       "strings": [
         6,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         8,
-        2,
-        3
-      ],
-      "degrees": [
-        "R",
-        "3",
-        "b7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-7-643-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        12,
         8,
-        5
+        9,
+        10
       ],
       "degrees": [
-        "3",
-        "b7",
-        "R"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-7-643-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        12,
-        8,
-        5
-      ],
-      "degrees": [
-        "3",
-        "b7",
-        "R"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-7-643-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        9
-      ],
-      "degrees": [
-        "b7",
         "R",
-        "3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-7-643-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        9
-      ],
-      "degrees": [
         "b7",
-        "R",
-        "3"
+        "3",
+        "13"
       ],
-      "notes": "Add tension"
+      "notes": "Add tension 13",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 20
     },
     {
       "id": "SH-7-543-R-S-01",
@@ -3933,7 +3922,9 @@ window.GVL_DATA = {
         "3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 21
     },
     {
       "id": "SH-7-543-R-P-01",
@@ -3945,115 +3936,82 @@ window.GVL_DATA = {
       "strings": [
         5,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         3,
         2,
+        3,
         3
       ],
       "degrees": [
         "R",
         "3",
-        "b7"
+        "b7",
+        "9"
       ],
-      "notes": "Add tension"
+      "notes": "Add tension 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 22
     },
     {
       "id": "SH-7-543-3-S-01",
       "family": "Shell",
-      "variant": "Standard",
+      "variant": "Practical",
       "quality": "7",
-      "inversion": "3rd",
+      "inversion": "Root",
       "stringSet": "5-4-3",
       "strings": [
         5,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
-        7,
-        8,
-        5
+        3,
+        2,
+        3,
+        2
       ],
       "degrees": [
+        "R",
         "3",
         "b7",
-        "R"
+        "b9"
       ],
-      "notes": ""
+      "notes": "Add tension b9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 23
     },
     {
       "id": "SH-7-543-3-P-01",
       "family": "Shell",
       "variant": "Practical",
       "quality": "7",
-      "inversion": "3rd",
+      "inversion": "Root",
       "stringSet": "5-4-3",
       "strings": [
         5,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
-        7,
-        8,
-        5
+        3,
+        2,
+        3,
+        4
       ],
       "degrees": [
+        "R",
         "3",
         "b7",
-        "R"
+        "#9"
       ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-7-543-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        9
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-7-543-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        9
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "3"
-      ],
-      "notes": "Add tension"
+      "notes": "Add tension #9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 24
     },
     {
       "id": "SH-m7-643-R-S-01",
@@ -4069,15 +4027,17 @@ window.GVL_DATA = {
       ],
       "frets": [
         8,
-        1,
-        3
+        8,
+        8
       ],
       "degrees": [
         "R",
-        "b3",
-        "b7"
+        "b7",
+        "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 21
     },
     {
       "id": "SH-m7-643-R-P-01",
@@ -4089,115 +4049,24 @@ window.GVL_DATA = {
       "strings": [
         6,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         8,
-        1,
-        3
-      ],
-      "degrees": [
-        "R",
-        "b3",
-        "b7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7-643-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        11,
         8,
-        5
-      ],
-      "degrees": [
-        "b3",
-        "b7",
-        "R"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7-643-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        11,
         8,
-        5
+        6
       ],
       "degrees": [
+        "R",
+        "b7",
         "b3",
-        "b7",
-        "R"
+        "11"
       ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7-643-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7-643-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": "Add tension"
+      "notes": "Add tension 11",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 22
     },
     {
       "id": "SH-m7-543-R-S-01",
@@ -4221,7 +4090,9 @@ window.GVL_DATA = {
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 23
     },
     {
       "id": "SH-m7-543-R-P-01",
@@ -4233,115 +4104,24 @@ window.GVL_DATA = {
       "strings": [
         5,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         3,
         1,
+        3,
         3
       ],
       "degrees": [
         "R",
         "b3",
-        "b7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7-543-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        8,
-        5
-      ],
-      "degrees": [
-        "b3",
         "b7",
-        "R"
+        "9"
       ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7-543-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        8,
-        5
-      ],
-      "degrees": [
-        "b3",
-        "b7",
-        "R"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7-543-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7-543-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": "Add tension"
+      "notes": "Add tension 9",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 24
     },
     {
       "id": "SH-m7b5-643-R-S-01",
@@ -4353,19 +4133,24 @@ window.GVL_DATA = {
       "strings": [
         6,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         8,
-        1,
-        3
+        8,
+        8,
+        7
       ],
       "degrees": [
         "R",
+        "b7",
         "b3",
-        "b7"
+        "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "SH-m7b5-643-R-P-01",
@@ -4377,115 +4162,24 @@ window.GVL_DATA = {
       "strings": [
         6,
         4,
-        3
+        3,
+        2
       ],
       "frets": [
         8,
-        1,
-        3
-      ],
-      "degrees": [
-        "R",
-        "b3",
-        "b7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7b5-643-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7b5",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        11,
         8,
-        5
-      ],
-      "degrees": [
-        "b3",
-        "b7",
-        "R"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7b5-643-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7b5",
-      "inversion": "3rd",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        11,
         8,
-        5
+        6
       ],
       "degrees": [
+        "R",
+        "b7",
         "b3",
-        "b7",
-        "R"
+        "11"
       ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7b5-643-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7b5",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7b5-643-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7b5",
-      "inversion": "7th",
-      "stringSet": "6-4-3",
-      "strings": [
-        6,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": "Add tension"
+      "notes": "b5→11",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 17
     },
     {
       "id": "SH-m7b5-543-R-S-01",
@@ -4495,21 +4189,26 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "5-4-3",
       "strings": [
+        6,
         5,
         4,
         3
       ],
       "frets": [
+        2,
         3,
         1,
         3
       ],
       "degrees": [
+        "b5",
         "R",
         "b3",
         "b7"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "SH-m7b5-543-R-P-01",
@@ -4519,117 +4218,26 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "5-4-3",
       "strings": [
-        5,
+        6,
         4,
-        3
-      ],
-      "frets": [
         3,
-        1,
-        3
-      ],
-      "degrees": [
-        "R",
-        "b3",
-        "b7"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7b5-543-3-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7b5",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
+        2
       ],
       "frets": [
-        6,
-        8,
-        5
+        2,
+        1,
+        3,
+        2
       ],
       "degrees": [
+        "b5",
         "b3",
         "b7",
-        "R"
+        "b5"
       ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7b5-543-3-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7b5",
-      "inversion": "3rd",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        6,
-        8,
-        5
-      ],
-      "degrees": [
-        "b3",
-        "b7",
-        "R"
-      ],
-      "notes": "Add tension"
-    },
-    {
-      "id": "SH-m7b5-543-7-S-01",
-      "family": "Shell",
-      "variant": "Standard",
-      "quality": "m7b5",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": ""
-    },
-    {
-      "id": "SH-m7b5-543-7-P-01",
-      "family": "Shell",
-      "variant": "Practical",
-      "quality": "m7b5",
-      "inversion": "7th",
-      "stringSet": "5-4-3",
-      "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
-        1,
-        10,
-        8
-      ],
-      "degrees": [
-        "b7",
-        "R",
-        "b3"
-      ],
-      "notes": "Add tension"
+      "notes": "Omit R",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-R-S-01",
@@ -4653,7 +4261,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-R-P-01",
@@ -4663,21 +4273,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        5,
+        2,
         5,
         3
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-1-S-01",
@@ -4701,7 +4313,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-1-P-01",
@@ -4711,21 +4325,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "1-3",
       "strings": [
+        5,
         3,
-        2,
         1
       ],
       "frets": [
+        10,
         9,
-        8,
         8
       ],
       "degrees": [
-        "3",
         "5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-2-S-01",
@@ -4740,16 +4356,18 @@ window.GVL_DATA = {
         1
       ],
       "frets": [
-        0,
-        1,
-        0
+        12,
+        13,
+        12
       ],
       "degrees": [
         "5",
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-13-2-P-01",
@@ -4759,21 +4377,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        0,
-        1,
-        0
+        10,
+        12,
+        12
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-R-S-01",
@@ -4797,7 +4417,9 @@ window.GVL_DATA = {
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-R-P-01",
@@ -4807,21 +4429,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
+        7,
         10,
-        9,
         8
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-1-S-01",
@@ -4836,16 +4460,18 @@ window.GVL_DATA = {
         2
       ],
       "frets": [
-        2,
-        0,
-        1
+        14,
+        12,
+        13
       ],
       "degrees": [
         "3",
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-1-P-01",
@@ -4855,21 +4481,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "2-4",
       "strings": [
+        6,
         4,
-        3,
         2
       ],
       "frets": [
-        2,
-        0,
-        1
+        15,
+        14,
+        13
       ],
       "degrees": [
-        "3",
         "5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-2-S-01",
@@ -4893,7 +4521,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-24-2-P-01",
@@ -4903,21 +4533,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
-        5,
+        3,
         5,
         5
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-R-S-01",
@@ -4932,16 +4564,18 @@ window.GVL_DATA = {
         3
       ],
       "frets": [
-        3,
-        2,
-        0
+        15,
+        14,
+        12
       ],
       "degrees": [
         "R",
         "3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-R-P-01",
@@ -4951,21 +4585,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "3-5",
       "strings": [
-        5,
+        6,
         4,
         3
       ],
       "frets": [
-        3,
-        2,
-        0
+        12,
+        10,
+        12
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-1-S-01",
@@ -4989,7 +4625,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-1-P-01",
@@ -4999,21 +4637,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "3-5",
       "strings": [
-        5,
+        6,
         4,
         3
       ],
       "frets": [
-        7,
-        5,
+        3,
+        2,
         5
       ],
       "degrees": [
-        "3",
         "5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-2-S-01",
@@ -5037,7 +4677,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Maj-35-2-P-01",
@@ -5047,21 +4689,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
-        10,
+        8,
         10,
         9
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-R-S-01",
@@ -5085,7 +4729,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-R-P-01",
@@ -5095,21 +4741,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "1-3",
       "strings": [
-        3,
+        4,
         2,
         1
       ],
       "frets": [
-        5,
-        4,
+        1,
+        1,
         3
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-1-S-01",
@@ -5133,7 +4781,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-1-P-01",
@@ -5143,21 +4793,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "1-3",
       "strings": [
+        5,
         3,
-        2,
         1
       ],
       "frets": [
-        8,
+        10,
         8,
         8
       ],
       "degrees": [
-        "b3",
         "5",
+        "b3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-2-S-01",
@@ -5172,8 +4824,8 @@ window.GVL_DATA = {
         1
       ],
       "frets": [
-        0,
-        1,
+        12,
+        13,
         11
       ],
       "degrees": [
@@ -5181,7 +4833,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-13-2-P-01",
@@ -5191,21 +4845,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        0,
-        1,
+        10,
+        12,
         11
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-R-S-01",
@@ -5229,7 +4885,9 @@ window.GVL_DATA = {
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-R-P-01",
@@ -5239,21 +4897,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "2-4",
       "strings": [
+        6,
         4,
-        3,
         2
       ],
       "frets": [
+        11,
         10,
-        8,
         8
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-1-S-01",
@@ -5268,16 +4928,18 @@ window.GVL_DATA = {
         2
       ],
       "frets": [
-        1,
-        0,
-        1
+        13,
+        12,
+        13
       ],
       "degrees": [
         "b3",
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-1-P-01",
@@ -5287,21 +4949,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "2-4",
       "strings": [
+        6,
         4,
-        3,
         2
       ],
       "frets": [
-        1,
-        0,
-        1
+        15,
+        13,
+        13
       ],
       "degrees": [
-        "b3",
         "5",
+        "b3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-2-S-01",
@@ -5325,7 +4989,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-24-2-P-01",
@@ -5335,21 +5001,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
-        5,
+        3,
         5,
         4
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-R-S-01",
@@ -5364,16 +5032,18 @@ window.GVL_DATA = {
         3
       ],
       "frets": [
-        3,
-        1,
-        0
+        15,
+        13,
+        12
       ],
       "degrees": [
         "R",
         "b3",
         "5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-R-P-01",
@@ -5383,21 +5053,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "3-5",
       "strings": [
-        5,
+        6,
         4,
         3
       ],
       "frets": [
-        3,
-        1,
-        0
+        11,
+        10,
+        12
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-1-S-01",
@@ -5421,7 +5093,9 @@ window.GVL_DATA = {
         "5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-1-P-01",
@@ -5431,21 +5105,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "3-5",
       "strings": [
-        5,
+        6,
         4,
         3
       ],
       "frets": [
-        6,
-        5,
+        3,
+        1,
         5
       ],
       "degrees": [
-        "b3",
         "5",
+        "b3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-2-S-01",
@@ -5469,7 +5145,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Min-35-2-P-01",
@@ -5479,21 +5157,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
-        10,
+        8,
         10,
         8
       ],
       "degrees": [
-        "5",
         "R",
+        "5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-R-S-01",
@@ -5517,7 +5197,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-R-P-01",
@@ -5527,21 +5209,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "1-3",
       "strings": [
-        3,
+        4,
         2,
         1
       ],
       "frets": [
-        5,
-        4,
+        1,
+        1,
         2
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "b5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-1-S-01",
@@ -5565,7 +5249,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-1-P-01",
@@ -5575,21 +5261,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "1-3",
       "strings": [
+        5,
         3,
-        2,
         1
       ],
       "frets": [
+        9,
         8,
-        7,
         8
       ],
       "degrees": [
-        "b3",
         "b5",
+        "b3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-2-S-01",
@@ -5613,7 +5301,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-13-2-P-01",
@@ -5623,21 +5313,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
+        10,
         11,
-        13,
         11
       ],
       "degrees": [
-        "b5",
         "R",
+        "b5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-R-S-01",
@@ -5661,7 +5353,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-R-P-01",
@@ -5671,21 +5365,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "2-4",
       "strings": [
-        4,
+        5,
         3,
         2
       ],
       "frets": [
-        10,
-        8,
+        6,
+        5,
         7
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "b5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-1-S-01",
@@ -5709,7 +5405,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-1-P-01",
@@ -5719,21 +5417,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "2-4",
       "strings": [
+        6,
         4,
-        3,
         2
       ],
       "frets": [
+        14,
         13,
-        11,
         13
       ],
       "degrees": [
-        "b3",
         "b5",
+        "b3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-2-S-01",
@@ -5757,7 +5457,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-24-2-P-01",
@@ -5767,21 +5469,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
-        4,
+        3,
         5,
         4
       ],
       "degrees": [
-        "b5",
         "R",
+        "5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-R-S-01",
@@ -5796,8 +5500,8 @@ window.GVL_DATA = {
         3
       ],
       "frets": [
-        3,
-        1,
+        15,
+        13,
         11
       ],
       "degrees": [
@@ -5805,7 +5509,9 @@ window.GVL_DATA = {
         "b3",
         "b5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-R-P-01",
@@ -5815,21 +5521,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "3-5",
       "strings": [
-        5,
+        6,
         4,
         3
       ],
       "frets": [
-        3,
-        1,
+        11,
+        10,
         11
       ],
       "degrees": [
-        "R",
         "b3",
+        "R",
         "b5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-1-S-01",
@@ -5853,7 +5561,9 @@ window.GVL_DATA = {
         "b5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-1-P-01",
@@ -5863,21 +5573,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "3-5",
       "strings": [
-        5,
-        4,
-        3
-      ],
-      "frets": [
         6,
         4,
-        5
+        2
+      ],
+      "frets": [
+        3,
+        1,
+        1
       ],
       "degrees": [
+        "5",
         "b3",
-        "b5",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-2-S-01",
@@ -5901,7 +5613,9 @@ window.GVL_DATA = {
         "R",
         "b3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Dim-35-2-P-01",
@@ -5911,21 +5625,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
+        8,
         9,
-        10,
         8
       ],
       "degrees": [
-        "b5",
         "R",
+        "b5",
         "b3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-R-S-01",
@@ -5949,7 +5665,9 @@ window.GVL_DATA = {
         "3",
         "#5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-R-P-01",
@@ -5959,21 +5677,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        5,
+        2,
         5,
         4
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "#5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-1-S-01",
@@ -5997,7 +5717,9 @@ window.GVL_DATA = {
         "#5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-1-P-01",
@@ -6007,21 +5729,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        9,
+        6,
         9,
         8
       ],
       "degrees": [
-        "3",
         "#5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-2-S-01",
@@ -6036,16 +5760,18 @@ window.GVL_DATA = {
         1
       ],
       "frets": [
-        1,
-        1,
-        0
+        13,
+        13,
+        12
       ],
       "degrees": [
         "#5",
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-13-2-P-01",
@@ -6055,21 +5781,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "1-3",
       "strings": [
+        4,
         3,
-        2,
         1
       ],
       "frets": [
-        1,
-        1,
-        0
+        10,
+        13,
+        12
       ],
       "degrees": [
-        "#5",
         "R",
+        "#5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-R-S-01",
@@ -6093,7 +5821,9 @@ window.GVL_DATA = {
         "3",
         "#5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-R-P-01",
@@ -6103,21 +5833,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
+        7,
         10,
-        9,
         9
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "#5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-1-S-01",
@@ -6141,7 +5873,9 @@ window.GVL_DATA = {
         "#5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-1-P-01",
@@ -6151,21 +5885,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
-        2,
-        1,
-        1
+        11,
+        14,
+        13
       ],
       "degrees": [
-        "3",
         "#5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-2-S-01",
@@ -6189,7 +5925,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-24-2-P-01",
@@ -6199,21 +5937,23 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "2-4",
       "strings": [
+        5,
         4,
-        3,
         2
       ],
       "frets": [
+        3,
         6,
-        5,
         5
       ],
       "degrees": [
-        "#5",
         "R",
+        "#5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-R-S-01",
@@ -6237,7 +5977,9 @@ window.GVL_DATA = {
         "3",
         "#5"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-R-P-01",
@@ -6247,21 +5989,23 @@ window.GVL_DATA = {
       "inversion": "Root",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
-        3,
-        2,
-        1
+        12,
+        15,
+        13
       ],
       "degrees": [
-        "R",
         "3",
+        "R",
         "#5"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-1-S-01",
@@ -6285,7 +6029,9 @@ window.GVL_DATA = {
         "#5",
         "R"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-1-P-01",
@@ -6295,21 +6041,23 @@ window.GVL_DATA = {
       "inversion": "1st",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
+        4,
         7,
-        6,
         5
       ],
       "degrees": [
-        "3",
         "#5",
+        "3",
         "R"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-2-S-01",
@@ -6333,7 +6081,9 @@ window.GVL_DATA = {
         "R",
         "3"
       ],
-      "notes": ""
+      "notes": "",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
     },
     {
       "id": "TR-Aug-35-2-P-01",
@@ -6343,51 +6093,52 @@ window.GVL_DATA = {
       "inversion": "2nd",
       "stringSet": "3-5",
       "strings": [
+        6,
         5,
-        4,
         3
       ],
       "frets": [
+        8,
         11,
-        10,
         9
       ],
       "degrees": [
-        "#5",
         "R",
+        "#5",
         "3"
       ],
-      "notes": "Open"
+      "notes": "Open",
+      "showInBrowseByChord": false,
+      "browseByChordOrder": null
+    },
+    {
+      "id": "SH-M7-14-R-S-01",
+      "family": "Shell",
+      "variant": "Practical",
+      "quality": "Maj7",
+      "inversion": "Root",
+      "stringSet": "1-4",
+      "strings": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "frets": [
+        10,
+        9,
+        8,
+        7
+      ],
+      "degrees": [
+        "R",
+        "3",
+        "5",
+        "7"
+      ],
+      "notes": "closed voicing",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 21
     }
   ]
 };
-
-// Browse by Chord configuration. All forms receive explicit defaults so that
-// entries without a configured order remain safely excluded from the view.
-// Add future selections here by assigning a form ID an order from 17 to 24.
-(() => {
-  const browseByChordOrders = {
-    "M7-14-1-S-01": 1, "M7-14-2-S-01": 2, "M7-14-3-S-01": 3, "M7-14-R-S-01": 4,
-    "M7-25-1-S-01": 5, "M7-25-2-S-01": 6, "M7-25-3-S-01": 7, "M7-25-R-S-01": 8,
-    "D3-M7-15-1-S-01": 9, "D3-M7-15-2-S-01": 10, "D3-M7-15-3-S-01": 11, "D3-M7-15-R-S-01": 12,
-    "D3-M7-26-1-S-01": 13, "D3-M7-26-2-S-01": 14, "D3-M7-26-3-S-01": 15, "D3-M7-26-R-S-01": 16,
-    "7-14-1-S-01": 1, "7-14-2-S-01": 2, "7-14-3-S-01": 3, "7-14-R-S-01": 4,
-    "7-25-1-S-01": 5, "7-25-2-S-01": 6, "7-25-3-S-01": 7, "7-25-R-S-01": 8,
-    "D3-7-15-1-S-01": 9, "D3-7-15-2-S-01": 10, "D3-7-15-3-S-01": 11, "D3-7-15-R-S-01": 12,
-    "D3-7-26-1-S-01": 13, "D3-7-26-2-S-01": 14, "D3-7-26-3-S-01": 15, "D3-7-26-R-S-01": 16,
-    "m7-14-1-S-01": 1, "m7-14-2-S-01": 2, "m7-14-3-S-01": 3, "m7-14-R-S-01": 4,
-    "m7-25-1-S-01": 5, "m7-25-2-S-01": 6, "m7-25-3-S-01": 7, "m7-25-R-S-01": 8,
-    "D3-m7-15-1-S-01": 9, "D3-m7-15-2-S-01": 10, "D3-m7-15-3-S-01": 11, "D3-m7-15-R-S-01": 12,
-    "D3-m7-26-1-S-01": 13, "D3-m7-26-2-S-01": 14, "D3-m7-26-3-S-01": 15, "D3-m7-26-R-S-01": 16,
-    "m7b5-14-1-S-01": 1, "m7b5-14-2-S-01": 2, "m7b5-14-3-S-01": 3, "m7b5-14-R-S-01": 4,
-    "m7b5-25-1-S-01": 5, "m7b5-25-2-S-01": 6, "m7b5-25-3-S-01": 7, "m7b5-25-R-S-01": 8,
-    "D3-m7b5-15-1-S-01": 9, "D3-m7b5-15-2-S-01": 10, "D3-m7b5-15-3-S-01": 11, "D3-m7b5-15-R-S-01": 12,
-    "D3-m7b5-26-1-S-01": 13, "D3-m7b5-26-2-S-01": 14, "D3-m7b5-26-3-S-01": 15, "D3-m7b5-26-R-S-01": 16
-  };
-
-  window.GVL_DATA.forms.forEach((form) => {
-    const order = browseByChordOrders[form.id];
-    form.showInBrowseByChord = Number.isInteger(order);
-    form.browseByChordOrder = Number.isInteger(order) ? order : null;
-  });
-})();
