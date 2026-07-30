@@ -268,15 +268,8 @@ h1 {
 
 .browse-chord-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-}
-
-.browse-chord-grid.is-vertical {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.browse-chord-grid.is-horizontal {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .browse-chord-card {
@@ -311,6 +304,18 @@ h1 {
   width: 100%;
   color: var(--text);
   font-size: 10px;
+}
+
+@media (min-width: 601px) {
+  .browse-chord-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 901px) {
+  .browse-chord-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1201px) {
+  .browse-chord-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
 .browse-chord-modal {
@@ -755,15 +760,8 @@ select {
 
   .browse-chord-grid {
     display: grid;
-    gap: 4px;
-  }
-
-  .browse-chord-grid.is-vertical {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .browse-chord-grid.is-horizontal {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
   }
 
   .browse-chord-card {
@@ -976,5 +974,11 @@ select {
   .empty-state {
     border: 1px solid #c7c7c7;
     padding: 12px;
+  }
+}
+
+@media print and (orientation: landscape) {
+  .browse-chord-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }

@@ -296,10 +296,14 @@
     const dimensions = orientation === "vertical"
       ? (size === "large"
         ? { width: 300, height: 470, left: 42, right: 24, top: 34, bottom: 28 }
-        : { width: 180, height: 250, left: 28, right: 18, top: 24, bottom: 18 })
+        : options.compact
+          ? { width: 160, height: 180, left: 26, right: 16, top: 20, bottom: 16 }
+          : { width: 180, height: 250, left: 28, right: 18, top: 24, bottom: 18 })
       : (size === "large"
         ? { width: 520, height: 250, left: 46, right: 18, top: 35, bottom: 28 }
-        : { width: 246, height: 120, left: 27, right: 11, top: 22, bottom: 16 });
+        : options.compact
+          ? { width: 220, height: 110, left: 24, right: 10, top: 19, bottom: 14 }
+          : { width: 246, height: 120, left: 27, right: 11, top: 22, bottom: 16 });
 
     const { width, height, left, right, top, bottom } = dimensions;
     const boardWidth = width - left - right;

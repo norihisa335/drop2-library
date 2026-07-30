@@ -324,6 +324,7 @@
       if (!form) return;
       Fretboard.render(host, transposeForm(form, state.browseByChordRoot), {
         size: "small",
+        compact: true,
         orientation: state.orientation,
         showDegrees: false
       });
