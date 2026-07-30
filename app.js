@@ -15,6 +15,7 @@
     root: "C",
     browseByChordRoot: "C",
     browseByChordQuality: "Maj7",
+    browseByChordPrintOrientation: "portrait",
     selectedBrowseByChordFormId: "",
     orientation: "horizontal",
     showDegrees: localStorage.getItem("gvl-show-degrees") !== "false",
@@ -236,6 +237,12 @@
     document.querySelectorAll("[data-segment='orientation'] button").forEach((button) => {
       button.addEventListener("click", () => {
         state.orientation = button.dataset.value;
+        render();
+      });
+    });
+    document.querySelectorAll("[data-segment='print-orientation'] button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.browseByChordPrintOrientation = button.dataset.value;
         render();
       });
     });

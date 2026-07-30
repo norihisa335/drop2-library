@@ -298,9 +298,16 @@
               <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">Vertical</button>
             </div>
           </div>
+          <div class="control-group browse-chord-print-layout">
+            <span class="control-label">Print layout</span>
+            <div class="segmented" data-segment="print-orientation">
+              <button class="${state.browseByChordPrintOrientation === "portrait" ? "active" : ""}" data-value="portrait" type="button">Portrait</button>
+              <button class="${state.browseByChordPrintOrientation === "landscape" ? "active" : ""}" data-value="landscape" type="button">Landscape</button>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="browse-chord-grid ${state.orientation === "vertical" ? "is-vertical" : "is-horizontal"}">
+      <section class="browse-chord-grid print-${state.browseByChordPrintOrientation}">
         ${forms.map(browseByChordCardMarkup).join("")}
       </section>
       ${selected ? `

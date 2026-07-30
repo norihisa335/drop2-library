@@ -13,7 +13,7 @@
   function updatePrintStyle() {
     const isBrowseByChord = state.page === "browse-by-chord";
     printStyle.textContent = isBrowseByChord
-      ? "@page { size: A4; margin: 8mm; }"
+      ? `@page { size: A4 ${state.browseByChordPrintOrientation}; margin: 8mm; }`
       : state.page === "forms"
       ? "@page { size: A4 landscape; margin: 8mm; }"
       : "@page { size: A4 portrait; margin: 7mm; }";
