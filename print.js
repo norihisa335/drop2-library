@@ -12,6 +12,7 @@
   const displayQuality = (...args) => helpers.displayQuality(...args);
   function updatePrintStyle() {
     const isBrowseByChord = state.page === "browse-by-chord";
+    if (state.page === "changes-play") { printStyle.textContent = "@page { size: A4 landscape; margin: 7mm; }"; return; }
     printStyle.textContent = isBrowseByChord
       ? `@page { size: A4 ${state.browseByChordPrintOrientation}; margin: 8mm; }`
       : state.page === "forms"

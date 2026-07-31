@@ -109,7 +109,7 @@
       "browse-by-chord": "Browse by Chord",
       "changes-play": "Chord Changes (Play)"
     };
-    const hasViewControls = state.page === "forms" || state.page === "voicings" || state.page === "browse-by-chord";
+    const hasViewControls = state.page === "forms" || state.page === "voicings" || state.page === "browse-by-chord" || state.page === "changes-play";
 
     pageTitle.textContent = pageTitles[state.page] ?? "Home";
     backButton.classList.toggle("hidden", isHome);
