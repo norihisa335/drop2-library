@@ -258,6 +258,42 @@ h1 {
   color: var(--secondary);
 }
 
+.play-controls .chord-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.play-controls > button {
+  margin-right: 8px;
+}
+
+.play-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(150px, 1fr);
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.play-card {
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--separator);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.play-card h4 { margin: 0 0 3px; font-size: 14px; }
+.play-card p { margin: 0 0 5px; color: var(--secondary); font-size: 10px; }
+
+@media (min-width: 700px) {
+  .play-grid { grid-auto-columns: minmax(180px, 1fr); }
+}
+
 .browse-chord-controls .control-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

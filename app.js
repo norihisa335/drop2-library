@@ -6,6 +6,7 @@
   const Browse = window.GVL_BROWSE;
   const Changes = window.GVL_CHANGES;
   const Print = window.GVL_PRINT;
+  const Play = window.GVL_PLAY;
 
   const state = {
     page: "home",
@@ -17,6 +18,7 @@
     browseByChordQuality: "Maj7",
     browseByChordPrintOrientation: "portrait",
     selectedBrowseByChordFormId: "",
+    playChords: [{ root: "D", quality: "m7" }, { root: "G", quality: "7" }, { root: "C", quality: "Maj7" }],
     orientation: "horizontal",
     showDegrees: localStorage.getItem("gvl-show-degrees") !== "false",
     selectedFormId: "M7-25-R-S-01",
@@ -90,6 +92,7 @@
   const helpers = { escapeHtml, options, displayQuality, transposeForm, getFormSlotInversion };
   Browse.configure({ DATA, Fretboard, state, app, helpers });
   Print.configure({ state, printStyle, helpers });
+  Play.configure({ DATA, Fretboard, state, app, helpers, rerender: () => render() });
 
   function setPage(page) {
     state.page = page;
@@ -285,10 +288,7 @@
       printHeaderMarkup: Print.printHeaderMarkup
     });
     if (state.page === "voicings") Changes.renderVoicingLibrary();
-    if (state.page === "changes-play") renderGuidePage({
-      title: "Chord Changes (Play)",
-      description: "Develop voice-leading around a chosen top-note direction."
-    });
+    if (state.page === "changes-play") Play.render();
     bindEvents();
   }
 
