@@ -1,0 +1,7 @@
+Guitar Voicing Library
+App Version: 2.0
+Data Master: 5
+Asset Cache-Buster: 9.5
+Release Date: 2026-07-31
+Live App: https://norihisa335.github.io/drop2-library/
+Repository: https://github.com/norihisa335/drop2-library
