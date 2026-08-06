@@ -28,12 +28,12 @@
       ascending: "Ascending", descending: "Descending", nearest: "Nearest", rootPosition: "Root Position"
     },
     ja: {
-      home: "ホーム", formsPage: "ボイシングから探す", voicingsPage: "コード進行から探す",
-      browseChordPage: "コードから探す", playPage: "コード進行を練習する",
-      browseVoicing: "ボイシングから探す", browseVoicingDesc: "種類・バリエーション・弦セットから探します。",
-      browseChord: "コードから探す", browseChordDesc: "ルートとコードタイプから探します。",
-      chordStudy: "コード進行から探す", chordStudyDesc: "コード進行に合うボイシングを確認します。",
-      chordPlay: "コード進行を練習する", chordPlayDesc: "トップノートを意識してコードチェンジを練習します。",
+      home: "ホーム", formsPage: "ボイシングから", voicingsPage: "コード進行（学習用）",
+      browseChordPage: "コードから", playPage: "コード進行（練習用）",
+      browseVoicing: "ボイシングから", browseVoicingDesc: "種類・バリエーション・弦セットから探します。",
+      browseChord: "コードから", browseChordDesc: "ルートとコードタイプから探します。",
+      chordStudy: "コード進行（学習用）", chordStudyDesc: "コード進行に合うボイシングを確認します。",
+      chordPlay: "コード進行（練習用）", chordPlayDesc: "トップノートを意識してコードチェンジを練習します。",
       family: "ボイシング", variant: "バリエーション", stringSet: "弦セット", root: "ルート", quality: "コードタイプ",
       inversion: "転回形", view: "表示", horizontal: "横向き", vertical: "縦向き",
       standard: "基本", practical: "実践", print: "印刷", degrees: "度数",
