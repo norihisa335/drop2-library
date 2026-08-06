@@ -11,6 +11,8 @@
   const escapeHtml = (...args) => helpers.escapeHtml(...args);
   const options = (...args) => helpers.options(...args);
   const displayQuality = (...args) => helpers.displayQuality(...args);
+  const t = (...args) => helpers.t(...args);
+  const displayUiValue = (...args) => helpers.displayUiValue(...args);
   function uniqueFormValues(forms, field) {
     return [...new Set(forms.map((form) => form[field]).filter(Boolean))];
   }
@@ -146,7 +148,7 @@
     if (selected) state.selectedFormId = selected.id;
 
     const table = [
-      `<div class="table-cell header">Quality</div>`,
+      `<div class="table-cell header">${escapeHtml(t("quality"))}</div>`,
       ...inversions.map((inversion) => `<div class="table-cell header">${escapeHtml(inversion)}</div>`)
     ];
 
@@ -177,7 +179,7 @@
       ${commonControls()}
 
       <div class="section-heading">
-        <h2>Forms</h2>
+        <h2>${escapeHtml(t("forms"))}</h2>
         <p>${escapeHtml(state.stringSet)}</p>
       </div>
 
@@ -186,7 +188,7 @@
       </section>
 
       <div class="section-heading selected-form-heading">
-        <h2>Selected Form</h2>
+        <h2>${escapeHtml(t("selectedForm"))}</h2>
         <p>${selected ? escapeHtml(selected.id) : ""}</p>
       </div>
 
@@ -203,11 +205,11 @@
           <div id="selectedFretboard" class="fretboard-host"></div>
 
           <div class="use-case">
-            <strong>Notes</strong><br>
+            <strong>${escapeHtml(t("notes"))}</strong><br>
             ${escapeHtml(selected.notes || "—")}
           </div>
         </section>
-      ` : `<div class="empty-state">No matching forms yet.</div>`}
+      ` : `<div class="empty-state">${escapeHtml(t("noMatchingForms"))}</div>`}
     `;
 
     document.querySelectorAll("[data-mini-form]").forEach((host) => {
@@ -260,7 +262,7 @@
   }
 
   function browseByChordCardMarkup(form) {
-    const variant = form.variant === "Standard" ? "" : `<span>${escapeHtml(form.variant)}</span>`;
+    const variant = form.variant === "Standard" ? "" : `<span>${escapeHtml(displayUiValue(form.variant))}</span>`;
     return `
       <button class="browse-chord-card" data-browse-form-id="${escapeHtml(form.id)}" type="button"
         aria-label="${escapeHtml(`${form.family} ${form.stringSet} ${form.inversion}`)}">
@@ -284,25 +286,25 @@
       <section class="panel browse-chord-controls">
         <div class="control-grid">
           <div class="control-group">
-            <label for="browseChordRootSelect">Root</label>
+            <label for="browseChordRootSelect">${escapeHtml(t("root"))}</label>
             <select id="browseChordRootSelect">${options(DATA.roots, state.browseByChordRoot)}</select>
           </div>
           <div class="control-group">
-            <label for="browseChordQualitySelect">Quality</label>
+            <label for="browseChordQualitySelect">${escapeHtml(t("quality"))}</label>
             <select id="browseChordQualitySelect">${options(["Maj7", "7", "m7", "m7b5"], state.browseByChordQuality)}</select>
           </div>
           <div class="control-group browse-chord-orientation">
-            <span class="control-label">View</span>
+            <span class="control-label">${escapeHtml(t("view"))}</span>
             <div class="segmented" data-segment="orientation">
-              <button class="${state.orientation === "horizontal" ? "active" : ""}" data-value="horizontal" type="button">Horizontal</button>
-              <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">Vertical</button>
+              <button class="${state.orientation === "horizontal" ? "active" : ""}" data-value="horizontal" type="button">${escapeHtml(t("horizontal"))}</button>
+              <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">${escapeHtml(t("vertical"))}</button>
             </div>
           </div>
           <div class="control-group browse-chord-print-layout">
-            <span class="control-label">Print layout</span>
+            <span class="control-label">${escapeHtml(t("printLayout"))}</span>
             <div class="segmented" data-segment="print-orientation">
-              <button class="${state.browseByChordPrintOrientation === "portrait" ? "active" : ""}" data-value="portrait" type="button">Portrait</button>
-              <button class="${state.browseByChordPrintOrientation === "landscape" ? "active" : ""}" data-value="landscape" type="button">Landscape</button>
+              <button class="${state.browseByChordPrintOrientation === "portrait" ? "active" : ""}" data-value="portrait" type="button">${escapeHtml(t("portrait"))}</button>
+              <button class="${state.browseByChordPrintOrientation === "landscape" ? "active" : ""}" data-value="landscape" type="button">${escapeHtml(t("landscape"))}</button>
             </div>
           </div>
         </div>
@@ -311,13 +313,13 @@
         ${forms.map(browseByChordCardMarkup).join("")}
       </section>
       ${selected ? `
-        <section class="browse-chord-modal" role="dialog" aria-modal="true" aria-label="Voicing details">
+        <section class="browse-chord-modal" role="dialog" aria-modal="true" aria-label="${escapeHtml(t("voicingDetails"))}">
           <div class="browse-chord-modal-card">
-            <button class="modal-close" data-close-browse-modal type="button" aria-label="Close">×</button>
+            <button class="modal-close" data-close-browse-modal type="button" aria-label="${escapeHtml(t("close"))}">×</button>
             <div class="selected-meta">
               <div>
                 <h3>${escapeHtml(selected.family)}</h3>
-                <p>${escapeHtml(selected.stringSet)} · ${escapeHtml(selected.inversion)}${selected.variant === "Standard" ? "" : ` · ${escapeHtml(selected.variant)}`}</p>
+                <p>${escapeHtml(selected.stringSet)} · ${escapeHtml(selected.inversion)}${selected.variant === "Standard" ? "" : ` · ${escapeHtml(displayUiValue(selected.variant))}`}</p>
               </div>
             </div>
             <div id="browseChordSelectedFretboard" class="fretboard-host"></div>

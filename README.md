@@ -2,7 +2,7 @@
 
 Guitar Voicing Library is a practical reference for guitar chord forms and voice-leading.
 
-- App version: v2.0
+- App version: v2.1
 - Data master: v5
 - Live app: https://norihisa335.github.io/drop2-library/
 - Repository: https://github.com/norihisa335/drop2-library
@@ -13,4 +13,4 @@ The Excel data master is the source of truth; `data.js` is generated from it.
 
 Version rule: minor changes use v2.1, v2.2, and so on; structural releases use v3.0. App version, data master version, asset cache-buster, and Git history are managed independently.
 
-See [Version Notes](docs/VERSION_NOTES_v2.0.md) and the [Specification](docs/SPECIFICATION_v2.0.md).
+See [Version Notes v2.1](docs/VERSION_NOTES_v2.1.md), [Version Notes v2.0](docs/VERSION_NOTES_v2.0.md), and the [v2.0 base specification](docs/SPECIFICATION_v2.0.md).

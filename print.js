@@ -10,6 +10,8 @@
 
   const escapeHtml = (...args) => helpers.escapeHtml(...args);
   const displayQuality = (...args) => helpers.displayQuality(...args);
+  const t = (...args) => helpers.t(...args);
+  const displayUiValue = (...args) => helpers.displayUiValue(...args);
   function updatePrintStyle() {
     const isBrowseByChord = state.page === "browse-by-chord";
     if (state.page === "changes-play") { printStyle.textContent = "@page { size: A4 landscape; margin: 7mm; }"; return; }
@@ -33,13 +35,13 @@
       ? state.root
       : activeChords.map((chord) => `${chord.root}${displayQuality(chord.quality)}`).join(" → ");
 
-    const headerLabel = state.page === "voicings" ? "CHORDS:" : "ROOT:";
+    const headerLabel = state.page === "voicings" ? `${t("chords")}:` : `${t("root")}:`;
 
     return `
       <div class="print-header" aria-hidden="true">
-        <div class="print-header-item">${escapeHtml(state.family)} ${escapeHtml(state.variant)}</div>
+        <div class="print-header-item">${escapeHtml(state.family)} ${escapeHtml(displayUiValue(state.variant))}</div>
         <div class="print-header-item">${escapeHtml(headerLabel)} ${escapeHtml(headerValue)}</div>
-        <div class="print-header-item">String Set: ${escapeHtml(state.stringSet)}</div>
+        <div class="print-header-item">${escapeHtml(t("stringSet"))}: ${escapeHtml(state.stringSet)}</div>
       </div>
     `;
   }

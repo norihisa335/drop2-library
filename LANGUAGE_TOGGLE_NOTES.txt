@@ -1,0 +1,9 @@
+Japanese language toggle added 2026-08-06
+
+- Default language: English
+- Language selection is not stored
+- Reload returns to English
+- Toggle appears on Home header only
+- English UI button: 日本語
+- Japanese UI button: English
+- Music notation and data values remain unchanged

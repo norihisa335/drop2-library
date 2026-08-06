@@ -19,6 +19,7 @@
   const availableQualities = (...args) => helpers.availableQualities(...args);
   const supportsChordChanges = (...args) => helpers.supportsChordChanges(...args);
   const displayQuality = (...args) => helpers.displayQuality(...args);
+  const t = (...args) => helpers.t(...args);
   const escapeHtml = (...args) => helpers.escapeHtml(...args);
   const options = (...args) => helpers.options(...args);
   const currentForms = (...args) => helpers.currentForms(...args);
@@ -640,10 +641,10 @@
 
     return state.chords.map((chord, index) => `
       <div class="chord-row ${chord.root ? "" : "is-empty"}">
-        <div class="chord-number">Chord ${index + 1}</div>
+        <div class="chord-number">${escapeHtml(t("chord"))} ${index + 1}</div>
 
         <div class="control-group">
-          <label for="chordRoot${index}">Root</label>
+          <label for="chordRoot${index}">${escapeHtml(t("root"))}</label>
           <select id="chordRoot${index}" data-chord-index="${index}" data-chord-field="root">
             ${rootOptions.map((item) => `
               <option value="${escapeHtml(item)}"${item === chord.root ? " selected" : ""}>
@@ -654,7 +655,7 @@
         </div>
 
         <div class="control-group">
-          <label for="chordQuality${index}">Quality</label>
+          <label for="chordQuality${index}">${escapeHtml(t("quality"))}</label>
           <select id="chordQuality${index}" data-chord-index="${index}" data-chord-field="quality"${chord.root ? "" : " disabled"}>
             ${options(availableQualities(), chord.quality)}
           </select>
@@ -669,7 +670,7 @@
       app.innerHTML = `
         ${printHeaderMarkup()}
         ${commonControls({ includeRoot: false })}
-        <div class="empty-state panel">Chord Changes is currently available for Drop2 and Drop3 only.</div>
+        <div class="empty-state panel">${escapeHtml(t("changesUnavailable"))}</div>
       `;
       return;
     }
@@ -688,8 +689,8 @@
       </section>
 
       <div class="section-heading">
-        <h2>Chord Changes</h2>
-        <p>${activeChords.length} ${activeChords.length === 1 ? "chord" : "chords"} x ${availableInversions(forms).length} patterns</p>
+        <h2>${escapeHtml(t("chordStudy"))}</h2>
+        <p>${activeChords.length} ${escapeHtml(t(activeChords.length === 1 ? "chord" : "chords"))} × ${availableInversions(forms).length} patterns</p>
       </div>
 
       <section id="patternList" class="pattern-list"></section>
@@ -698,7 +699,7 @@
     const list = document.querySelector("#patternList");
 
     if (activeChords.length === 0) {
-      list.innerHTML = `<div class="empty-state panel">Select at least one chord.</div>`;
+      list.innerHTML = `<div class="empty-state panel">${escapeHtml(t("selectChord"))}</div>`;
       return;
     }
 
@@ -711,7 +712,7 @@
       const heading = document.createElement("div");
       heading.className = "pattern-heading";
       heading.innerHTML = `
-        <h3>Pattern ${pattern.patternIndex + 1}</h3>
+        <h3>${escapeHtml(t("pattern"))} ${pattern.patternIndex + 1}</h3>
         <p>${activeChords.map((chord) => `${escapeHtml(chord.root)}${escapeHtml(displayQuality(chord.quality))}`).join(" &rarr; ")}</p>
       `;
 
@@ -733,7 +734,7 @@
           <span class="voicing-separator" aria-hidden="true">${candidate ? "-" : ""}</span>
           <span class="voicing-fret">${escapeHtml(candidate ? candidate.displayLabel : "")}</span>
           <span class="voicing-separator" aria-hidden="true">${candidate ? "-" : ""}</span>
-          <span class="voicing-chord-number">Chord ${chord.originalIndex + 1}</span>
+          <span class="voicing-chord-number">${escapeHtml(t("chord"))} ${chord.originalIndex + 1}</span>
         `;
 
         card.append(title, meta);
@@ -741,7 +742,7 @@
         if (!candidate) {
           const empty = document.createElement("div");
           empty.className = "empty-state compact";
-          empty.textContent = "No form";
+          empty.textContent = t("noForm");
           card.appendChild(empty);
         } else {
           const host = document.createElement("div");

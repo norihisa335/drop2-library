@@ -8,7 +8,47 @@
   const Print = window.GVL_PRINT;
   const Play = window.GVL_PLAY;
 
+  const translations = {
+    en: {
+      home: "Home", formsPage: "Form Library", voicingsPage: "Voicing Library",
+      browseChordPage: "Browse by Chord", playPage: "Chord Changes (Play)",
+      browseVoicing: "Browse by Voicing", browseVoicingDesc: "Explore forms by family, variant, and string set.",
+      browseChord: "Browse by Chord", browseChordDesc: "Find voicings from a root and chord quality.",
+      chordStudy: "Chord Changes (Study)", chordStudyDesc: "Examine optimized voice-leading through changes.",
+      chordPlay: "Chord Changes (Play)", chordPlayDesc: "Shape voice-leading with a top-note focus.",
+      family: "Family", variant: "Variant", stringSet: "String Set", root: "Root", quality: "Quality",
+      inversion: "Inversion", view: "View", horizontal: "Horizontal", vertical: "Vertical",
+      standard: "Standard", practical: "Practical", print: "Print", degrees: "Degrees",
+      backAria: "Back", printAria: "Print current view", languageButton: "日本語", languageAria: "日本語表示に切り替える",
+      forms: "Forms", selectedForm: "Selected Form", notes: "Notes", noMatchingForms: "No matching forms yet.",
+      printLayout: "Print layout", portrait: "Portrait", landscape: "Landscape", voicingDetails: "Voicing details", close: "Close",
+      chord: "Chord", chords: "chords", pattern: "Pattern", noForm: "No form", selectChord: "Select at least one chord.",
+      changesUnavailable: "Chord Changes is currently available for Drop2 and Drop3 only.",
+      remove: "Remove", addChord: "Add chord", refresh: "Refresh", noVoicing: "No available voicing",
+      ascending: "Ascending", descending: "Descending", nearest: "Nearest", rootPosition: "Root Position"
+    },
+    ja: {
+      home: "ホーム", formsPage: "ボイシングから探す", voicingsPage: "コード進行から探す",
+      browseChordPage: "コードから探す", playPage: "コード進行を練習する",
+      browseVoicing: "ボイシングから探す", browseVoicingDesc: "種類・バリエーション・弦セットから探します。",
+      browseChord: "コードから探す", browseChordDesc: "ルートとコードタイプから探します。",
+      chordStudy: "コード進行から探す", chordStudyDesc: "コード進行に合うボイシングを確認します。",
+      chordPlay: "コード進行を練習する", chordPlayDesc: "トップノートを意識してコードチェンジを練習します。",
+      family: "ボイシング", variant: "バリエーション", stringSet: "弦セット", root: "ルート", quality: "コードタイプ",
+      inversion: "転回形", view: "表示", horizontal: "横向き", vertical: "縦向き",
+      standard: "基本", practical: "実践", print: "印刷", degrees: "度数",
+      backAria: "戻る", printAria: "現在の画面を印刷", languageButton: "English", languageAria: "Switch to English",
+      forms: "ボイシング一覧", selectedForm: "選択中のボイシング", notes: "メモ", noMatchingForms: "一致するボイシングがありません。",
+      printLayout: "印刷レイアウト", portrait: "縦", landscape: "横", voicingDetails: "ボイシング詳細", close: "閉じる",
+      chord: "コード", chords: "コード", pattern: "パターン", noForm: "ボイシングなし", selectChord: "コードを1つ以上選択してください。",
+      changesUnavailable: "コード進行は現在、Drop2とDrop3のみ対応しています。",
+      remove: "削除", addChord: "コードを追加", refresh: "更新", noVoicing: "使用できるボイシングがありません",
+      ascending: "上行", descending: "下行", nearest: "最短", rootPosition: "ルートポジション"
+    }
+  };
+
   const state = {
+    language: "en",
     page: "home",
     family: "Drop2",
     variant: "Standard",
@@ -36,6 +76,8 @@
   const degreeControl = document.querySelector("#degreeControl");
   const degreeToggle = document.querySelector("#degreeToggle");
   const header = document.querySelector(".app-header");
+  const languageToggle = document.querySelector("#languageToggle");
+  const degreeLabel = document.querySelector("#degreeLabel");
   const printButton = document.createElement("button");
   const printStyle = document.createElement("style");
 
@@ -63,9 +105,19 @@
       .replaceAll("'", "&#039;");
   }
 
+  function t(key) {
+    return translations[state.language]?.[key] ?? translations.en[key] ?? key;
+  }
+
+  function displayUiValue(value) {
+    if (value === "Standard") return t("standard");
+    if (value === "Practical") return t("practical");
+    return value;
+  }
+
   function options(items, selected) {
     return items
-      .map((item) => `<option value="${escapeHtml(item)}"${item === selected ? " selected" : ""}>${escapeHtml(item)}</option>`)
+      .map((item) => `<option value="${escapeHtml(item)}"${item === selected ? " selected" : ""}>${escapeHtml(displayUiValue(item))}</option>`)
       .join("");
   }
 
@@ -89,7 +141,7 @@
     return form?.inversion ?? "Root";
   }
 
-  const helpers = { escapeHtml, options, displayQuality, transposeForm, getFormSlotInversion };
+  const helpers = { escapeHtml, options, displayQuality, transposeForm, getFormSlotInversion, t, displayUiValue };
   Browse.configure({ DATA, Fretboard, state, app, helpers });
   Print.configure({ state, printStyle, helpers });
   Play.configure({ DATA, Fretboard, state, app, helpers, rerender: () => render() });
@@ -103,18 +155,26 @@
   function renderHeader() {
     const isHome = state.page === "home";
     const pageTitles = {
-      home: "Home",
-      forms: "Form Library",
-      voicings: "Voicing Library",
-      "browse-by-chord": "Browse by Chord",
-      "changes-play": "Chord Changes (Play)"
+      home: t("home"),
+      forms: t("formsPage"),
+      voicings: t("voicingsPage"),
+      "browse-by-chord": t("browseChordPage"),
+      "changes-play": t("playPage")
     };
     const hasViewControls = state.page === "forms" || state.page === "voicings" || state.page === "browse-by-chord" || state.page === "changes-play";
 
-    pageTitle.textContent = pageTitles[state.page] ?? "Home";
+    document.documentElement.lang = state.language;
+    pageTitle.textContent = pageTitles[state.page] ?? t("home");
+    backButton.setAttribute("aria-label", t("backAria"));
     backButton.classList.toggle("hidden", isHome);
     degreeControl.classList.toggle("hidden", !hasViewControls);
     printButton.classList.toggle("hidden", !hasViewControls);
+    printButton.textContent = t("print");
+    printButton.setAttribute("aria-label", t("printAria"));
+    degreeLabel.textContent = t("degrees");
+    languageToggle.textContent = t("languageButton");
+    languageToggle.setAttribute("aria-label", t("languageAria"));
+    languageToggle.classList.toggle("hidden", !isHome);
   }
 
   function renderHome() {
@@ -122,26 +182,26 @@
       <section class="home-grid">
         <button class="nav-card" data-go="forms" type="button">
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Browse by Voicing</h2>
-          <p>Explore forms by family, variant, and string set.</p>
+          <h2>${escapeHtml(t("browseVoicing"))}</h2>
+          <p>${escapeHtml(t("browseVoicingDesc"))}</p>
         </button>
 
         <button class="nav-card" data-go="browse-by-chord" type="button">
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Browse by Chord</h2>
-          <p>Find voicings from a root and chord quality.</p>
+          <h2>${escapeHtml(t("browseChord"))}</h2>
+          <p>${escapeHtml(t("browseChordDesc"))}</p>
         </button>
 
         <button class="nav-card" data-go="voicings" type="button">
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Chord Changes (Study)</h2>
-          <p>Examine optimized voice-leading through changes.</p>
+          <h2>${escapeHtml(t("chordStudy"))}</h2>
+          <p>${escapeHtml(t("chordStudyDesc"))}</p>
         </button>
 
         <button class="nav-card" data-go="changes-play" type="button">
           <span class="arrow" aria-hidden="true">&rsaquo;</span>
-          <h2>Chord Changes (Play)</h2>
-          <p>Shape voice-leading with a top-note focus.</p>
+          <h2>${escapeHtml(t("chordPlay"))}</h2>
+          <p>${escapeHtml(t("chordPlayDesc"))}</p>
         </button>
       </section>
     `;
@@ -161,28 +221,28 @@
       <section class="panel">
         <div class="control-grid">
           <div class="control-group">
-            <label for="familySelect">Family</label>
+            <label for="familySelect">${escapeHtml(t("family"))}</label>
             <select id="familySelect">${options(Browse.availableFamilies(), state.family)}</select>
           </div>
           <div class="control-group">
-            <label for="variantSelect">Variant</label>
+            <label for="variantSelect">${escapeHtml(t("variant"))}</label>
             <select id="variantSelect">${options(Browse.availableVariants(), state.variant)}</select>
           </div>
           <div class="control-group">
-            <label for="stringSetSelect">String Set</label>
+            <label for="stringSetSelect">${escapeHtml(t("stringSet"))}</label>
             <select id="stringSetSelect">${options(Browse.availableStringSets(), state.stringSet)}</select>
           </div>
           ${includeRoot ? `
             <div class="control-group">
-              <label for="rootSelect">Root</label>
+              <label for="rootSelect">${escapeHtml(t("root"))}</label>
               <select id="rootSelect">${options(DATA.roots, state.root)}</select>
             </div>
           ` : ""}
           <div class="control-group">
-            <span class="control-label">View</span>
+            <span class="control-label">${escapeHtml(t("view"))}</span>
             <div class="segmented" data-segment="orientation">
-              <button class="${state.orientation === "horizontal" ? "active" : ""}" data-value="horizontal" type="button">Horizontal</button>
-              <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">Vertical</button>
+              <button class="${state.orientation === "horizontal" ? "active" : ""}" data-value="horizontal" type="button">${escapeHtml(t("horizontal"))}</button>
+              <button class="${state.orientation === "vertical" ? "active" : ""}" data-value="vertical" type="button">${escapeHtml(t("vertical"))}</button>
             </div>
           </div>
         </div>
@@ -292,6 +352,10 @@
     bindEvents();
   }
 
+  languageToggle.addEventListener("click", () => {
+    state.language = state.language === "en" ? "ja" : "en";
+    render();
+  });
   backButton.addEventListener("click", () => setPage("home"));
   degreeToggle.addEventListener("change", () => {
     state.showDegrees = degreeToggle.checked;

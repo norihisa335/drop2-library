@@ -73,7 +73,7 @@ button { color: inherit; }
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px 12px;
   min-height: 92px;
@@ -94,6 +94,29 @@ button { color: inherit; }
   grid-column: 2;
   grid-row: 1;
   min-width: 0;
+}
+
+
+.language-toggle {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 10px 0 10px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.language-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .header-actions {
@@ -703,7 +726,30 @@ select {
   .header-title-wrap {
     grid-column: 2;
   }
-  .header-actions {
+  
+.language-toggle {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 10px 0 10px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.language-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.header-actions {
     grid-column: 3;
     grid-row: 1;
     width: auto;
@@ -794,7 +840,30 @@ select {
   .degree-control,
   .icon-button,
   .print-button,
-  .header-actions {
+  
+.language-toggle {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 10px 0 10px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.language-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.header-actions {
     box-shadow: none !important;
     background: transparent !important;
     border-color: #c7c7c7 !important;
