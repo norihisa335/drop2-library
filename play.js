@@ -52,10 +52,15 @@
 
   function choose(previous, list, mode) {
     if (!previous) return initial(list, mode);
-    return [...list].sort((a, b) => {
+
+    // v2.1: Ascending must rise strictly. Equal or lower top notes are excluded.
+    const eligible = mode === "asc"
+      ? list.filter((item) => item.topNotePitch > previous.topNotePitch)
+      : list;
+
+    return [...eligible].sort((a, b) => {
       const rank = (item) => {
         const difference = item.topNotePitch - previous.topNotePitch;
-        if (mode === "asc") return difference === 0 ? 0 : difference > 0 ? 1 : 2;
         if (mode === "desc") return difference === 0 ? 0 : difference < 0 ? 1 : 2;
         return 0;
       };

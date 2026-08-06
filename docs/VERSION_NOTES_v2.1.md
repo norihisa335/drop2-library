@@ -1,17 +1,17 @@
-# Version Notes v2.1
+# Guitar Voicing Library v2.1
 
-- Added an English/Japanese UI language toggle.
-- The default language remains English.
-- The language selection is not stored; reloading returns the app to English.
-- The toggle appears only in the Home header.
-- The button reads `日本語` in English mode and `English` in Japanese mode.
-- Added Japanese labels for the agreed UI text.
-- Music notation, chord symbols, voicing-family names, Degree values, and internal data values remain unchanged.
-- Data master remains v5.
-- Asset cache-buster advanced to v9.9.
+Release date: 2026-08-06
 
-v2.0 remains the base release for the Home refresh, Browse by Chord, Drop3, Shell, and Triad additions.
+## Changes
 
-- Refined Japanese Home card titles to shorter, context-led wording.
+- Changed Chord Changes (Play) → Ascending to require strict upward motion.
+- Every selected top note must be higher than the preceding top note.
+- Equal top notes are no longer accepted.
+- If no strictly higher candidate exists within the available voicings and fret range, that chord displays no available voicing.
 
-- Added an iOS Safari-safe language-toggle fallback and a 44px tap target.
+## Version management
+
+- App version: v2.1
+- Data master: v5 (unchanged)
+- Asset cache-buster: v10.0
+- Previous app version: v2.0
