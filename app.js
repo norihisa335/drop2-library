@@ -352,10 +352,30 @@
     bindEvents();
   }
 
-  languageToggle.addEventListener("click", () => {
+  let languageToggleLocked = false;
+
+  function toggleLanguage(event) {
+    event?.preventDefault();
+    event?.stopPropagation();
+
+    // iOS Safariで click / touchend が連続発火した場合の二重切替を防ぐ。
+    if (languageToggleLocked) return false;
+    languageToggleLocked = true;
+
     state.language = state.language === "en" ? "ja" : "en";
     render();
-  });
+
+    window.setTimeout(() => {
+      languageToggleLocked = false;
+    }, 350);
+
+    return false;
+  }
+
+  // HTML側のonclickからも呼べるようにして、Safariでも確実に反応させる。
+  window.GVL_toggleLanguage = toggleLanguage;
+
+  languageToggle.addEventListener("click", toggleLanguage);
   backButton.addEventListener("click", () => setPage("home"));
   degreeToggle.addEventListener("change", () => {
     state.showDegrees = degreeToggle.checked;
