@@ -58,14 +58,22 @@
       ? list.filter((item) => item.topNotePitch > previous.topNotePitch)
       : list;
 
+    if (mode === "desc") {
+      const candidates = [...eligible].filter((item) => item.topNotePitch <= previous.topNotePitch);
+      if (candidates.length > 0) {
+        return candidates.sort((a, b) => {
+          const diffA = previous.topNotePitch - a.topNotePitch;
+          const diffB = previous.topNotePitch - b.topNotePitch;
+          return diffA - diffB
+            || Math.abs(a.positionCenter - previous.positionCenter) - Math.abs(b.positionCenter - previous.positionCenter)
+            || a.positionCenter - b.positionCenter
+            || a.browseByChordOrder - b.browseByChordOrder;
+        })[0];
+      }
+      return null;
+    }
+
     return [...eligible].sort((a, b) => {
-      const rank = (item) => {
-        const difference = item.topNotePitch - previous.topNotePitch;
-        if (mode === "desc") return difference === 0 ? 0 : difference < 0 ? 1 : 2;
-        return 0;
-      };
-      const rankDifference = rank(a) - rank(b);
-      if (rankDifference) return rankDifference;
       const aDistance = Math.abs(a.topNotePitch - previous.topNotePitch);
       const bDistance = Math.abs(b.topNotePitch - previous.topNotePitch);
       return aDistance - bDistance
@@ -75,7 +83,84 @@
     })[0] || null;
   }
 
+  function findDescendingPath(chords) {
+    const optionsByIndex = chords.map((chord) => candidates(chord, false));
+    let bestPath = null;
+
+    const comparePaths = (pathA, pathB) => {
+      const aLength = pathA.length;
+      const bLength = pathB.length;
+      if (aLength !== bLength) return bLength - aLength;
+      const aStart = pathA[0]?.topNotePitch ?? Number.MAX_SAFE_INTEGER;
+      const bStart = pathB[0]?.topNotePitch ?? Number.MAX_SAFE_INTEGER;
+      if (aStart !== bStart) return aStart - bStart;
+      const aDrop = pathA.reduce((sum, item, index) => index === 0 ? 0 : sum + (pathA[index - 1].topNotePitch - item.topNotePitch), 0);
+      const bDrop = pathB.reduce((sum, item, index) => index === 0 ? 0 : sum + (pathB[index - 1].topNotePitch - item.topNotePitch), 0);
+      if (aDrop !== bDrop) return aDrop - bDrop;
+      const aMove = pathA.reduce((sum, item, index) => index === 0 ? 0 : sum + Math.abs(item.positionCenter - pathA[index - 1].positionCenter), 0);
+      const bMove = pathB.reduce((sum, item, index) => index === 0 ? 0 : sum + Math.abs(item.positionCenter - pathB[index - 1].positionCenter), 0);
+      if (aMove !== bMove) return aMove - bMove;
+      return 0;
+    };
+
+    const search = (index, currentPath, currentTop, currentPosition) => {
+      if (!bestPath || comparePaths(currentPath, bestPath) < 0) {
+        bestPath = [...currentPath];
+      }
+
+      if (index === chords.length) {
+        return;
+      }
+
+      const candidates = optionsByIndex[index] || [];
+      const valid = currentPath.length === 0
+        ? candidates
+        : candidates.filter((item) => item.topNotePitch <= currentTop);
+
+      if (valid.length === 0) {
+        return;
+      }
+
+      const ranked = [...valid].sort((a, b) => {
+        const aDrop = currentPath.length === 0 ? 0 : currentTop - a.topNotePitch;
+        const bDrop = currentPath.length === 0 ? 0 : currentTop - b.topNotePitch;
+        const aMove = Math.abs(a.positionCenter - currentPosition);
+        const bMove = Math.abs(b.positionCenter - currentPosition);
+        const aStartPenalty = currentPath.length === 0 ? a.topNotePitch : 0;
+        const bStartPenalty = currentPath.length === 0 ? b.topNotePitch : 0;
+        return (currentPath.length === 0 ? aStartPenalty - bStartPenalty : 0)
+          || (currentPath.length === 0 ? aDrop - bDrop : 0)
+          || (currentPath.length === 0 ? aMove - bMove : 0)
+          || a.topNotePitch - b.topNotePitch
+          || a.positionCenter - b.positionCenter
+          || a.browseByChordOrder - b.browseByChordOrder;
+      });
+
+      ranked.forEach((item) => {
+        const nextPath = [...currentPath, item];
+        search(index + 1, nextPath, item.topNotePitch, item.positionCenter);
+      });
+    };
+
+    search(0, [], Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+
+    if (!bestPath) {
+      return chords.map(() => null);
+    }
+
+    const result = Array(chords.length).fill(null);
+    bestPath.forEach((item, index) => {
+      result[index] = item;
+    });
+    return result;
+  }
+
   function sequence(mode) {
+    if (mode === "desc") {
+      const path = findDescendingPath(state.playChords);
+      return path;
+    }
+
     let previous = null;
     return state.playChords.map((chord) => {
       const next = mode === "root"

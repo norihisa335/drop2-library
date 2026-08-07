@@ -6112,6 +6112,35 @@ window.GVL_DATA = {
       "browseByChordOrder": null
     },
     {
+      "id": "SH-M7-25-R-S-01",
+      "family": "Shell",
+      "variant": "Practical",
+      "quality": "Maj7",
+      "inversion": "Root",
+      "stringSet": "2-5",
+      "strings": [
+        5,
+        4,
+        3,
+        2
+      ],
+      "frets": [
+        15,
+        14,
+        12,
+        12
+      ],
+      "degrees": [
+        "R",
+        "3",
+        "5",
+        "7"
+      ],
+      "notes": "closed voicing",
+      "showInBrowseByChord": true,
+      "browseByChordOrder": 22
+    },
+    {
       "id": "SH-M7-14-R-S-01",
       "family": "Shell",
       "variant": "Practical",
